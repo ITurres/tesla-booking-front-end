@@ -1,22 +1,20 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import Layout from '../components/Layout';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<h1>Home</h1>} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
