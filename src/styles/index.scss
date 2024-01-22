@@ -2,10 +2,15 @@
 
 @use 'variables' as var;
 
+$main-color: var.$main-color;
+$fourth-main-color: var.$fourth-main-color;
+$main-font: var.$main-font;
+$heading-font: var.$heading-font;
+
 body {
-  background-color: var.$main-color;
-  color: var.$fourth-main-color;
-  font-family: var.$main-font;
+  background-color: $main-color;
+  color: $fourth-main-color;
+  font-family: $main-font;
 }
 
 h1,
@@ -14,5 +19,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var.$heading-font;
+  font-family: $heading-font;
 }
