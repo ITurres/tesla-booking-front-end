@@ -1,4 +1,4 @@
-const fetcher = async (path, method = 'GET', body = {}) => {
+const apiRequest = async (path, method = 'GET', body = {}) => {
   const baseUrl = process.env.REACT_APP_TESLA_API_BASE_URL;
 
   const builtHeaders = {
@@ -18,4 +18,4 @@ const fetcher = async (path, method = 'GET', body = {}) => {
   }
 };
 
-export default fetcher;
+export default apiRequest;
