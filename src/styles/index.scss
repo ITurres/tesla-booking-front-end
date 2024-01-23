@@ -1,0 +1,23 @@
+@forward './base/normalize.css';
+
+@use 'variables' as var;
+
+$main-color: var.$main-color;
+$fourth-main-color: var.$fourth-main-color;
+$main-font: var.$main-font;
+$heading-font: var.$heading-font;
+
+body {
+  background-color: $main-color;
+  color: $fourth-main-color;
+  font-family: $main-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
