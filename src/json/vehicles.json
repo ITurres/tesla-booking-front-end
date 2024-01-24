@@ -5,7 +5,7 @@
     "model_name": "Model S",
     "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png",
     "description": "Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation.",
-    "rental_price": "150",
+    "rental_price": 150,
     "performance_details": [
       "359 mi Range (EPA est.)",
       "1.99 s 0-60 mph*",
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "user_id": 1,
     "model_name": "Model X",
     "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png",
@@ -41,7 +41,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "user_id": 1,
     "model_name": "Model Y",
     "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png",
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "user_id": 1,
     "model_name": "Cybertruck",
     "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png",
