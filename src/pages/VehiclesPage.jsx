@@ -5,14 +5,14 @@ import VehiclesList from '../features/vehiclesList/VehiclesList';
 import '../styles/pages/VehiclesPage.scss';
 
 const VehiclesPage = () => (
-  <main className="vehicles__main">
-    <div className="vehicles__main__overlay">
-      <h1 className="vehicles__main__title">latest models</h1>
+  <section className="vehicles__section">
+    <div className="vehicles__section__overlay">
+      <h1 className="vehicles__section__title">latest models</h1>
       <p>Please select a Tesla Model</p>
     </div>
 
     <VehiclesList />
-  </main>
+  </section>
 );
 
 export default VehiclesPage;
