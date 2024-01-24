@@ -9,12 +9,12 @@ import { CiInstagram } from 'react-icons/ci';
 import PropTypes from 'prop-types';
 
 const VehicleItem = ({ vehicleData }) => (
-  <Link
-    to={`/vehicles/${vehicleData.id}`}
-    className="splide__slide splide__slide--vehicle-link"
-    key={vehicleData.id}
-  >
-    <div className="splide__slide__container">
+  <div className="splide__slide__container">
+    <Link
+      to={`/vehicles/${vehicleData.id}`}
+      className="splide__slide splide__slide--vehicle-link"
+      key={vehicleData.id}
+    >
       <img
         className="splide__slide__img"
         src={vehicleData.image}
@@ -27,40 +27,40 @@ const VehicleItem = ({ vehicleData }) => (
         </h2>
         <p>{`${vehicleData.description.substring(0, 100)}...`}</p>
       </div>
-      <nav className="splide__slide__social-media-links">
-        <ul>
-          <li>
-            <a
-              href="https://www.facebook.com/TeslaMotorsCorp/"
-              rel="noreferrer noopener"
-              target="_blank "
-            >
-              <FaFacebookF />
-            </a>
-          </li>
-          <li>
-            <a
-              id="twitter-link"
-              href="https://twitter.com/Tesla"
-              rel="noreferrer noopener"
-              target="_blank "
-            >
-              <FaXTwitter />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/teslamotors/"
-              rel="noreferrer noopener"
-              target="_blank "
-            >
-              <CiInstagram />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </Link>
+    </Link>
+    <nav className="splide__slide__social-media-links">
+      <ul>
+        <li>
+          <a
+            href="https://www.facebook.com/TeslaMotorsCorp/"
+            rel="noreferrer noopener"
+            target="_blank "
+          >
+            <FaFacebookF />
+          </a>
+        </li>
+        <li>
+          <a
+            id="twitter-link"
+            href="https://twitter.com/Tesla"
+            rel="noreferrer noopener"
+            target="_blank "
+          >
+            <FaXTwitter />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/teslamotors/"
+            rel="noreferrer noopener"
+            target="_blank "
+          >
+            <CiInstagram />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 );
 
 VehicleItem.propTypes = {
