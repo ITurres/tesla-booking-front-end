@@ -9,20 +9,17 @@ $light-gray: var.$light-gray;
 $fourth-main-color: var.$fourth-main-color;
 
 .splide__slide {
+  &__img {
+    border-radius: 5%;
+    transition: transform 0.3s ease-in-out;
+  }
+
   &--vehicle-link {
     text-decoration: none;
-
-    .splide__slide__img {
-      transition: transform 0.3s ease-in-out;
-    }
 
     &:hover .splide__slide__img {
       transform: scale(1.1);
     }
-  }
-
-  &__img {
-    border-radius: 5%;
   }
 
   &__overlay {
