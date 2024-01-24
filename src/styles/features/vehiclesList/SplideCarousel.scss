@@ -1,0 +1,127 @@
+@use '../../variables' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$dark-gray: var.$dark-gray;
+$light-gray: var.$light-gray;
+$fourth-main-color: var.$fourth-main-color;
+
+.splide__slide {
+  &__img {
+    border-radius: 5%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &--vehicle-link {
+    text-decoration: none;
+
+    &:hover .splide__slide__img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__overlay {
+    text-align: center;
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      text-transform: uppercase;
+      width: fit-content;
+      margin: 0 auto;
+      border-bottom: 5px dotted $light-gray;
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      color: $fourth-main-color;
+
+      &.Cybertruck {
+        font-family: 'Shadows Into Light', cursive !important;
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      font-weight: 600;
+      color: $dark-gray;
+    }
+  }
+
+  &__social-media-links {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: fit-content;
+      gap: 1rem;
+      padding: 2rem 0 4rem 0;
+    }
+
+    li {
+      list-style-type: none;
+
+      a {
+        border-radius: 100%;
+        padding: 0.8rem 1rem;
+        padding-bottom: 0.6rem; // ? to make the icon centered vertically.
+        border: 2px solid $light-gray;
+        font-size: 1.1rem;
+        color: darken($light-gray, 20%);
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          border: 2px solid $secondary-main-color;
+          color: $secondary-main-color;
+        }
+      }
+    }
+  }
+}
+
+.splide__track {
+  margin: 1rem;
+}
+
+.splide__arrow {
+  border-radius: unset;
+  width: 5%;
+  position: absolute;
+  right: 0;
+  background-color: $secondary-main-color;
+  padding: 2rem 3.5rem 2rem 2rem;
+  cursor: default;
+
+  .react-icon {
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: $main-color;
+    }
+
+    &--prev {
+      padding-left: 2.5rem; // ? to center the icon like the --next.
+    }
+  }
+
+  &--prev {
+    position: absolute;
+    left: -2%;
+    border-top-right-radius: 46%;
+    border-bottom-right-radius: 46%;
+  }
+
+  &--next {
+    border-top-left-radius: 46%;
+    border-bottom-left-radius: 46%;
+  }
+}
+
+.splide__pagination__page {
+  background-color: $dark-gray;
+
+  &.is-active {
+    background-color: $secondary-main-color;
+  }
+}
