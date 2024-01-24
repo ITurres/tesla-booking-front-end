@@ -35,4 +35,9 @@ $light-gray: var.$light-gray;
     justify-content: end;
     padding-bottom: 1rem;
   }
+
+  // ? breakpoint for mobile devices when are in landscape mode.
+  @media (orientation: landscape) and (max-height: 500px) {
+    height: unset;
+  }
 }
