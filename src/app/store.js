@@ -1,3 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-export default configureStore({ reducer: { } });
+import vehiclesListReducer from '../features/vehiclesList/vehicleListSlice';
+
+export default configureStore({
+  reducer: {
+    vehiclesList: vehiclesListReducer,
+  },
+});
