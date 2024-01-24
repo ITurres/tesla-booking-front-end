@@ -11,9 +11,7 @@ const VehiclesPage = () => (
       <p>Please select a Tesla Model</p>
     </div>
 
-    <div className="vehicles__list--wrapper">
-      <VehiclesList />
-    </div>
+    <VehiclesList />
   </main>
 );
 
