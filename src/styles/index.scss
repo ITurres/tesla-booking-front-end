@@ -21,3 +21,12 @@ h5,
 h6 {
   font-family: $heading-font;
 }
+
+@media only screen and (min-width: 992px) {
+  main {
+    height: 100vh;
+    position: relative;
+    max-width: 1400px;
+    margin: auto;
+  }
+}
