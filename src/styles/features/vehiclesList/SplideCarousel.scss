@@ -105,24 +105,25 @@ $fourth-main-color: var.$fourth-main-color;
     }
 
     &--prev {
-      padding-left: 1.5rem; // ? to center the icon like the --next.
+      padding-top: 0.2rem;
+      padding-left: 2rem; // ? to center the icon like the --next.
     }
 
     &--next {
-      padding-left: 0.5rem;
+      padding-top: 0.2rem;
     }
   }
 
   &--prev {
     position: absolute;
     left: 0;
-    border-top-right-radius: 46%;
-    border-bottom-right-radius: 46%;
+    border-top-right-radius: 44%;
+    border-bottom-right-radius: 44%;
   }
 
   &--next {
-    border-top-left-radius: 46%;
-    border-bottom-left-radius: 46%;
+    border-top-left-radius: 44%;
+    border-bottom-left-radius: 44%;
   }
 }
 

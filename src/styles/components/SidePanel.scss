@@ -7,6 +7,9 @@ $secondary-main-color: var.$secondary-main-color;
 $fourth-main-color: var.$fourth-main-color;
 $third-main-color: var.$third-main-color;
 
+$screen-min-width: 992px;
+$screen-max-height: 500px;
+
 .panel {
   display: flex;
   position: fixed;
@@ -19,7 +22,7 @@ $third-main-color: var.$third-main-color;
   backdrop-filter: blur(5px);
   background-color: rgba($fourth-main-color, 80%);
 
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: $screen-min-width) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -42,12 +45,12 @@ $third-main-color: var.$third-main-color;
     box-sizing: border-box;
     margin: 0;
 
-    @media only screen and (max-height: 500px) {
+    @media only screen and (max-height: $screen-max-height) {
       height: auto;
       max-height: 90%;
     }
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: $screen-min-width) {
       width: 100%;
       height: 100%;
       padding: 10px 0;
@@ -61,11 +64,15 @@ $third-main-color: var.$third-main-color;
       align-items: center;
       justify-content: space-between;
 
+      @media screen and (min-width: $screen-min-width) {
+        justify-content: center;
+      }
+
       img {
         width: 60%;
 
-        @media only screen and (min-width: 992px) {
-          width: 90%;
+        @media only screen and (min-width: $screen-min-width) {
+          width: 80%;
         }
       }
 
@@ -87,7 +94,7 @@ $third-main-color: var.$third-main-color;
           background-color: $secondary-main-color;
         }
 
-        @media only screen and (min-width: 992px) {
+        @media only screen and (min-width: $screen-min-width) {
           display: none;
         }
       }
@@ -96,7 +103,7 @@ $third-main-color: var.$third-main-color;
     nav {
       margin-top: 30%;
 
-      @media only screen and (max-height: 500px) {
+      @media only screen and (max-height: $screen-max-height) {
         overflow: hidden;
         overflow-y: scroll;
         border-top: 1px solid $third-main-color;
@@ -129,13 +136,12 @@ $third-main-color: var.$third-main-color;
     }
   }
 
-  @media only screen and (max-height: 500px) {
+  @media only screen and (max-height: $screen-max-height) {
     margin: 0;
   }
 
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: $screen-min-width) {
     gap: 0;
-    justify-content: flex-start;
 
     a {
       font-size: 1.2rem;
