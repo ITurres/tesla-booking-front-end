@@ -25,7 +25,7 @@ const SplideCarousel = ({ vehicles }) => (
       perMove: 1,
       width: '85%',
       height: '100%',
-      gap: '5rem',
+      gap: '0rem',
       cover: false,
       isNavigation: false,
       pagination: true,

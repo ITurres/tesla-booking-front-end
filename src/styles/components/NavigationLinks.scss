@@ -1,0 +1,45 @@
+@forward '../base/normalize.css';
+
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$heading-font: var.$heading-font;
+$light-gray: var.$light-gray;
+
+.list {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  flex-direction: column;
+  margin: 0;
+
+  a {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    color: darken($light-gray, 10%);
+    align-items: center;
+    text-decoration: none;
+    font: bold 1.25rem $heading-font;
+    transition: all 0.1s ease;
+
+    svg {
+      fill: $fourth-main-color;
+    }
+
+    &:hover {
+      color: $main-color;
+      background-color: $secondary-main-color;
+
+      svg {
+        fill: $main-color;
+      }
+    }
+
+    @media only screen and (min-width: 992px) {
+      font-size: 0.9rem;
+    }
+  }
+}

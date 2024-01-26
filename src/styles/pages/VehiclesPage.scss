@@ -32,7 +32,7 @@ $light-gray: var.$light-gray;
   .vehicles__list--wrapper {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding-bottom: 1rem;
   }
 
