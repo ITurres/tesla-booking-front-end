@@ -3,6 +3,8 @@
 @use 'variables' as var;
 
 $main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$dark-gray: var.$dark-gray;
 $fourth-main-color: var.$fourth-main-color;
 $main-font: var.$main-font;
 $heading-font: var.$heading-font;
@@ -26,7 +28,39 @@ h6 {
   main {
     height: 100vh;
     position: relative;
-    max-width: 1400px;
     margin: auto;
+  }
+}
+
+.btn,
+input,
+select {
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  border: 2px solid $main-color;
+  background-color: rgba($main-color, 90%);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.1s ease-in-out;
+  color: $dark-gray;
+}
+
+input,
+select {
+  &:focus {
+    outline: none;
+    border: 2px solid $secondary-main-color;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  color: $secondary-main-color;
+  background: transparent;
+
+  &:hover {
+    background-color: $secondary-main-color;
+    border: 2px solid $secondary-main-color;
+    color: $main-color;
   }
 }
