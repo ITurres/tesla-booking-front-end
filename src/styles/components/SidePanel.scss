@@ -1,0 +1,144 @@
+@forward '../base/normalize.css';
+
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$third-main-color: var.$third-main-color;
+
+.panel {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  inset-inline: 0;
+  align-items: center;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba($fourth-main-color, 80%);
+
+  @media only screen and (min-width: 992px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    align-items: center;
+    background-color: transparent;
+    border-inline-end: 1px solid $third-main-color;
+  }
+
+  menu {
+    width: 90%;
+    height: 90%;
+    max-width: 400px;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+    background-color: $main-color;
+    box-sizing: border-box;
+    margin: 0;
+
+    @media only screen and (max-height: 500px) {
+      height: auto;
+      max-height: 90%;
+    }
+
+    @media only screen and (min-width: 992px) {
+      width: 100%;
+      height: 100%;
+      padding: 10px 0;
+      border-radius: 0;
+    }
+
+    div {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        width: 60%;
+
+        @media only screen and (min-width: 992px) {
+          width: 90%;
+        }
+      }
+
+      button {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 10px;
+        border: none;
+        transition: all 0.1s ease;
+
+        &:hover {
+          cursor: pointer;
+          color: $main-color;
+          background-color: $secondary-main-color;
+        }
+
+        @media only screen and (min-width: 992px) {
+          display: none;
+        }
+      }
+    }
+
+    nav {
+      margin-top: 30%;
+
+      @media only screen and (max-height: 500px) {
+        overflow: hidden;
+        overflow-y: scroll;
+        border-top: 1px solid $third-main-color;
+        border-bottom: 1px solid $third-main-color;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+  margin-top: auto;
+
+  a {
+    display: block;
+    color: inherit;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.1s ease;
+
+    &:hover {
+      color: $secondary-main-color;
+    }
+  }
+
+  @media only screen and (max-height: 500px) {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 992px) {
+    gap: 0;
+    justify-content: flex-start;
+
+    a {
+      font-size: 1.2rem;
+    }
+  }
+}
