@@ -23,7 +23,7 @@ const SplideCarousel = ({ vehicles }) => (
       type: 'loop',
       perPage: 3,
       perMove: 1,
-      width: '85%',
+      width: '78%',
       height: '100%',
       gap: '0rem',
       cover: false,
@@ -32,13 +32,10 @@ const SplideCarousel = ({ vehicles }) => (
       mediaQuery: 'max',
       arrows: 2,
       breakpoints: {
-        800: {
+        992: {
           arrows: false,
           perPage: 1,
           width: '100%',
-        },
-        1048: {
-          perPage: 2,
         },
       },
     }}
