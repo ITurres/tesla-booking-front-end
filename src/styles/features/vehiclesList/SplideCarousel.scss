@@ -10,7 +10,7 @@ $fourth-main-color: var.$fourth-main-color;
 
 .splide__slide {
   &__container {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   &__img {
@@ -117,7 +117,7 @@ $fourth-main-color: var.$fourth-main-color;
 
   &--prev {
     position: absolute;
-    left: 0;
+    left: 0.6%;
     border-top-right-radius: 44%;
     border-bottom-right-radius: 44%;
   }

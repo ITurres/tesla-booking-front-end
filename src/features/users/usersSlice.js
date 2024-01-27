@@ -5,7 +5,7 @@ import userLogout from './userThunk';
 const usersSlice = createSlice({
   name: 'users',
   initialState: {
-    logged: false,
+    logged: true,
     token: null,
     userName: null,
     loading: false,
