@@ -24,10 +24,15 @@ h6 {
   font-family: $heading-font;
 }
 
-@media only screen and (min-width: 992px) {
-  main {
+main {
+  padding-top: 70px;
+
+  @media only screen and (min-width: 992px) {
     height: 100vh;
+    max-width: 1400px;
     position: relative;
+    padding: 0;
+    box-sizing: border-box;
     margin: auto;
   }
 }
