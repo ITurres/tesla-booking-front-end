@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import postReservation from './reservationThunk';
+import postReservation from './reservationsThunk';
 
 const reservationSlice = createSlice({
   name: 'reservationsList',
