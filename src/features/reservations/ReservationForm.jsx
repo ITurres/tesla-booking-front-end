@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { addReservation } from './reservationsSlice';
+import postReservation from './reservationsThunk';
 
 import '../../styles/features/reservations/ReservationForm.scss';
 
@@ -19,6 +22,8 @@ const locations = [
 ];
 
 const ReservationForm = () => {
+  const dispatch = useDispatch();
+
   const [buttonText, setButtonText] = useState('');
 
   const dateRef = useRef(null);
@@ -29,7 +34,10 @@ const ReservationForm = () => {
   const userName = useSelector((state) => state.users.userName) || 'Guest';
 
   const validateFormData = (reservationData) => {
-    const { carId, date, location } = reservationData;
+    // eslint-disable-next-line camelcase
+    const { car_id, date, location } = reservationData;
+    // eslint-disable-next-line camelcase
+    const carId = car_id;
 
     if (!date || !date.match(/^\d{4}-\d{2}-\d{2}$/)) {
       setButtonText('Please enter a valid date.');
@@ -61,17 +69,29 @@ const ReservationForm = () => {
 
   const handleSubmit = () => {
     const reservationData = {
-      carId: vehicleRef.current.value,
+      car_id: vehicleRef.current.value,
       date: dateRef.current.value,
       location: locationRef.current.value,
     };
 
     if (validateFormData(reservationData)) {
-      // ! DISPATCH THE RESERVATION TO THE STORE AND SUBMIT IT TO THE SERVER. <===== IMPORTANT.
-      dateRef.current.value = '';
-      locationRef.current.value = '';
-      vehicleRef.current.value = '';
-      setButtonText('Yay!, your reservation has been submitted.');
+      // ? once the location has been validated by id, we can store the location name
+      // ? by using the (id - 1) as the index of the locations array.
+      reservationData.location = locations[reservationData.location - 1].name;
+
+      dispatch(postReservation(reservationData))
+        .then(() => {
+          dispatch(addReservation(reservationData));
+
+          dateRef.current.value = '';
+          locationRef.current.value = '';
+          vehicleRef.current.value = '';
+
+          setButtonText('Yay!, your reservation has been submitted.');
+        })
+        .catch(() => {
+          setButtonText('Oops!, something went wrong.');
+        });
     }
   };
 
