@@ -8,7 +8,7 @@ import postReservation from './reservationsThunk';
 import '../../styles/features/reservations/ReservationForm.scss';
 
 // ! IMPORTANT: once the 'VehicleDetail (Show page)' feature is completed, <===== IMPORTANT.
-// ! the comments in lines 83 and 84 should be addressed. <====================== IMPORTANT.
+// ! the comments in lines 115 to 117 should be addressed. <====================== IMPORTANT.
 
 const locations = [
   { id: 1, name: 'Cordoba, Argentina' },
@@ -80,8 +80,9 @@ const ReservationForm = () => {
       reservationData.location = locations[reservationData.location - 1].name;
 
       dispatch(postReservation(reservationData))
-        .then(() => {
-          dispatch(addReservation(reservationData));
+        // ? the response 'reservation' already has the data attached to it.
+        .then((reservation) => {
+          dispatch(addReservation(reservation));
 
           dateRef.current.value = '';
           locationRef.current.value = '';
