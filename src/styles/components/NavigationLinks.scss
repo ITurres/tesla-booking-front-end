@@ -8,6 +8,8 @@ $fourth-main-color: var.$fourth-main-color;
 $heading-font: var.$heading-font;
 $light-gray: var.$light-gray;
 
+$screen-min-width: 992px;
+
 .list {
   display: flex;
   padding: 0;
@@ -18,7 +20,7 @@ $light-gray: var.$light-gray;
   a {
     display: flex;
     gap: 10px;
-    padding: 10px;
+    padding: 1rem;
     color: darken($light-gray, 10%);
     align-items: center;
     text-decoration: none;
@@ -38,8 +40,13 @@ $light-gray: var.$light-gray;
       }
     }
 
-    @media only screen and (min-width: 992px) {
-      font-size: 0.9rem;
+    @media only screen and (min-width: $screen-min-width) {
+      font-size: 0.8rem;
+      padding: 1rem 2rem;
+
+      svg {
+        font-size: 1rem;
+      }
     }
   }
 }
