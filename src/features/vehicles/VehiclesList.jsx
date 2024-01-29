@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Spinner from 'react-bootstrap/Spinner';
 
 import SplideCarousel from './SplideCarousel';
-import fetchVehicles from './vehiclesThunk';
+import { fetchVehicles } from './vehiclesThunk';
 
 import '../../styles/features/vehiclesList/VehiclesList.scss';
 
@@ -21,9 +21,7 @@ const VehiclesList = () => {
     reFetchVehicles();
   }, [reFetchVehicles]);
 
-  const { loading, error, vehicles } = useSelector(
-    (state) => state.vehicles,
-  );
+  const { loading, error, vehicles } = useSelector((state) => state.vehicles);
 
   if (loading) {
     return (
