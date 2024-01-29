@@ -4,12 +4,19 @@ import apiRequest from '../../helpers/apiRequest';
 
 const fetchVehicles = createAsyncThunk(
   'vehiclesList/fetchVehicles',
-  async () => {
+  async (_, { rejectWithValue }) => {
     const vehiclesEndpoint = process.env.REACT_APP_TESLA_API_VEHICLES;
 
-    const vehicles = await apiRequest(vehiclesEndpoint);
-    return vehicles;
+    try {
+      return await apiRequest(vehiclesEndpoint);
+    } catch (error) {
+      return rejectWithValue(error || 'Something went wrong...');
+    }
   },
 );
 
-export default fetchVehicles;
+// ! The next eslint error will be disable, once the `postVehicle` thunk is implemented,
+// ! and the thunk is exported alongside `fetchVehicles`, then we can remove the disable
+// ! comment.
+// eslint-disable-next-line import/prefer-default-export
+export { fetchVehicles };
