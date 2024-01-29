@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import {
   FaCreditCard, FaHouse, FaPlus, FaRegCalendar, FaTrash, FaUserLock, FaUserPlus, FaUserSlash,
 } from 'react-icons/fa6';
-import { userLogout } from '../features/users/usersSlice';
+import userLogout from '../features/users/userThunk';
 import getRandomId from '../helpers/getRandomId';
 import '../styles/components/NavigationLinks.scss';
 

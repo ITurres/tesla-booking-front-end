@@ -1,0 +1,73 @@
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$fourth-main-color: var.$fourth-main-color;
+
+// * @ITurres:
+// ! I have set it to 0 since covering the hero video with such overlay does not look good.
+// * change it to 0.2 or 0.3 if it is requested.
+$overlay-bg-transparency: 0;
+
+.reservation-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &__hero-overlay {
+    position: absolute;
+    background: rgba($secondary-main-color, $overlay-bg-transparency);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__demo-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+    background-color: $fourth-main-color; // ? @ITurres: fallback color for browsers that do not support video or video is not loaded.
+  }
+
+  &__content {
+    color: $main-color;
+    text-align: center;
+    max-width: 1000px;
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 2rem;
+      border-bottom: 1px solid $main-color;
+      padding: 0 0.5rem;
+      padding-bottom: 1rem;
+      max-width: 300px;
+      margin: 0 auto;
+
+      span {
+        color: $secondary-main-color;
+      }
+
+      @media screen and (min-width: 768px) {
+        max-width: 700px;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      padding: 0 0.5rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-left: 20%;
+  }
+}

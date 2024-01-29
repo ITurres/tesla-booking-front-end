@@ -61,11 +61,12 @@ menu {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 22%;
+    width: 20%;
     align-items: center;
     background-color: transparent;
     border-inline-end: 1px solid $third-main-color;
     transition: none;
+    max-width: 300px;
   }
 
   div {
@@ -112,7 +113,7 @@ menu {
         width: 60%;
 
         @media only screen and (min-width: $screen-min-width) {
-          width: 80%;
+          width: 70%;
         }
       }
 
