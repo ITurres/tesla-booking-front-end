@@ -6,7 +6,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import SplideCarousel from './SplideCarousel';
 import { fetchVehicles } from './vehiclesThunk';
 
-import '../../styles/features/vehiclesList/VehiclesList.scss';
+import '../../styles/features/vehicles/VehiclesList.scss';
 
 const VehiclesList = () => {
   const dispatch = useDispatch();

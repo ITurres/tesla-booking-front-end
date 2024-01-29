@@ -6,7 +6,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 import '../../../node_modules/@splidejs/react-splide/dist/css/themes/splide-default.min.css';
 
-import '../../styles/features/vehiclesList/SplideCarousel.scss';
+import '../../styles/features/vehicles/SplideCarousel.scss';
 
 import { MdOutlinePlayArrow } from 'react-icons/md';
 
