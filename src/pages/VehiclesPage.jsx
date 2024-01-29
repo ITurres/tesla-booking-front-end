@@ -1,6 +1,6 @@
 import React from 'react';
 
-import VehiclesList from '../features/vehiclesList/VehiclesList';
+import VehiclesList from '../features/vehicles/VehiclesList';
 
 import '../styles/pages/VehiclesPage.scss';
 

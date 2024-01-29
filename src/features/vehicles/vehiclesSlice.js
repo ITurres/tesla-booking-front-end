@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import fetchVehicles from './vehicleListThunk';
+import fetchVehicles from './vehiclesThunk';
 
-const vehiclesListSlice = createSlice({
-  name: 'vehiclesList',
+const vehiclesSlice = createSlice({
+  name: 'vehicles',
   initialState: {
     vehicles: [],
     loading: false,
@@ -26,4 +26,4 @@ const vehiclesListSlice = createSlice({
   },
 });
 
-export default vehiclesListSlice.reducer;
+export default vehiclesSlice.reducer;
