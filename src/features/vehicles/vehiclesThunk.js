@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import apiRequest from '../../helpers/apiRequest';
 
 const fetchVehicles = createAsyncThunk(
-  'vehiclesList/fetchVehicles',
+  'vehicles/fetchVehicles',
   async (_, { rejectWithValue }) => {
     const vehiclesEndpoint = process.env.REACT_APP_TESLA_API_VEHICLES;
 
@@ -15,8 +15,17 @@ const fetchVehicles = createAsyncThunk(
   },
 );
 
-// ! The next eslint error will be disable, once the `postVehicle` thunk is implemented,
-// ! and the thunk is exported alongside `fetchVehicles`, then we can remove the disable
-// ! comment.
-// eslint-disable-next-line import/prefer-default-export
-export { fetchVehicles };
+const postNewVehicle = createAsyncThunk(
+  'vehicles/postNewVehicle',
+  async (newVehicleDataBody, { rejectWithValue }) => {
+    const vehiclesCreateEndpoint = process.env.REACT_APP_TESLA_API_VEHICLES_CREATE;
+
+    try {
+      return await apiRequest(vehiclesCreateEndpoint, 'POST', newVehicleDataBody);
+    } catch (error) {
+      return rejectWithValue(error || 'Something went wrong...');
+    }
+  },
+);
+
+export { fetchVehicles, postNewVehicle };
