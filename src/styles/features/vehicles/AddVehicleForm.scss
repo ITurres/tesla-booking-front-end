@@ -1,0 +1,30 @@
+@use '../../variables' as var;
+
+$screen-min-width: 992px;
+
+.add-vehicle-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem;
+
+  input:not([name='modelName'], [name='rentalPrice']),
+  textarea {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $screen-min-width) {
+    padding: 0 3rem;
+
+    textarea {
+      width: 90%;
+    }
+
+    input[name='modelName'],
+    input[name='rentalPrice'] {
+      align-self: flex-start;
+      margin-left: 1.5rem;
+    }
+  }
+}
