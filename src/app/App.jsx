@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Layout from '../components/Layout';
 import VehiclesPage from '../pages/VehiclesPage';
 import ReservationPage from '../pages/ReservationPage';
+import AddVehiclePage from '../pages/AddVehiclePage';
 
 function App() {
   const userLogged = useSelector((state) => state.users.logged);
@@ -14,7 +15,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<VehiclesPage />} />
           {userLogged && (
-            <Route path="reservations/new" element={<ReservationPage />} />
+            <>
+              <Route path="reservations/new" element={<ReservationPage />} />
+              <Route path="vehicles/new" element={<AddVehiclePage />} />
+            </>
           )}
         </Route>
         <Route path="*" element={<h1>404 Not Found</h1>} />
