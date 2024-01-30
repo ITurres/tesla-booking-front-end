@@ -15,9 +15,4 @@ $dark-gray: var.$dark-gray;
     align-items: center;
     gap: 1rem;
   }
-
-  .btn.form__error {
-    box-shadow: 0 20px 80px 0.1rem $secondary-main-color;
-    cursor: not-allowed;
-  }
 }
