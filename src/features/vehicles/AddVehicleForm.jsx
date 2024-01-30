@@ -124,7 +124,7 @@ const AddVehicleForm = () => {
   };
 
   return (
-    <form className="add-vehicle-form">
+    <form className="add-vehicle-form" autoComplete="off">
       <input
         ref={formRefs.modelNameRef}
         name="modelName"
