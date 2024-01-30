@@ -19,6 +19,7 @@ main:has(.add-vehicle-page) {
   flex-direction: column;
   align-items: center;
   background-image: url($section-bg-image);
+  background-color: $fourth-main-color;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
