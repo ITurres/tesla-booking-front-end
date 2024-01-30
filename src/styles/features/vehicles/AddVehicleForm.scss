@@ -1,5 +1,7 @@
 @use '../../variables' as var;
 
+$secondary-main-color: var.$secondary-main-color;
+
 $screen-min-width: 992px;
 
 .add-vehicle-form {
@@ -12,6 +14,25 @@ $screen-min-width: 992px;
   input:not([name='modelName'], [name='rentalPrice']),
   textarea {
     width: 100%;
+  }
+
+  // stylelint-disable-next-line no-descending-specificity
+  input,
+  textarea {
+    transition: all 0.2s ease-in-out;
+    border: 4px solid transparent;
+
+    &:focus {
+      // ? border that resembles the Cybertruck interior board lines.
+      border: 4px solid adjust-color($secondary-main-color, $hue: 30deg, $saturation: -40%);
+      box-shadow: 0 0 0.5rem $secondary-main-color;
+      scale: 1.03;
+      margin: 0.5rem;
+    }
+
+    &:hover {
+      scale: 1.03;
+    }
   }
 
   @media screen and (min-width: $screen-min-width) {
