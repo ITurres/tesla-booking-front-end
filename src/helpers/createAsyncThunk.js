@@ -3,10 +3,15 @@
 // * helps reduce boilerplate code.
 const createAsyncReducer = (asyncAction, sliceName) => (builder) => {
   builder
-    .addCase(asyncAction.pending, (state) => ({ ...state, loading: true }))
+    .addCase(asyncAction.pending, (state) => ({
+      ...state,
+      loading: true,
+      error: null,
+    }))
     .addCase(asyncAction.fulfilled, (state, action) => ({
       ...state,
       loading: false,
+      error: null,
       [sliceName]: action.payload,
     }))
     .addCase(asyncAction.rejected, (state, action) => ({
