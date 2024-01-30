@@ -30,7 +30,7 @@ const ReservationForm = () => {
   const locationRef = useRef(null);
   const vehicleRef = useRef(null);
 
-  const vehicles = useSelector((state) => state.vehiclesList.vehicles);
+  const vehicles = useSelector((state) => state.vehicles.vehicles);
   const userName = useSelector((state) => state.users.userName) || 'Guest';
 
   const validateFormData = (reservationData) => {

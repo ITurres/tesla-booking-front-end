@@ -1,0 +1,66 @@
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$light-gray: var.$light-gray;
+
+$section-bg-image: 'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Cybertruck-Human-Meet-Machine-Desktop.png';
+$screen-min-width: 992px;
+$screen-min-height: 1024px;
+
+main:has(.add-vehicle-page) {
+  padding-top: 0;
+}
+
+.add-vehicle-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url($section-bg-image);
+  background-color: $fourth-main-color;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  min-height: 130vh;
+  text-align: center;
+  color: $main-color;
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 1.8rem;
+    padding: 0 0.5rem;
+    max-width: max-content;
+    margin: 0 auto;
+    color: $light-gray;
+    line-height: 2.5rem;
+
+    span {
+      color: $secondary-main-color;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+    max-width: calc($screen-min-width - 100px);
+  }
+
+  &__content {
+    @media screen and (min-width: $screen-min-width) {
+      margin-left: 20%;
+    }
+  }
+
+  @media screen and (min-width: $screen-min-width) {
+    min-height: 100%;
+  }
+
+  @media screen and (min-height: $screen-min-height) {
+    min-height: 100vh;
+  }
+}
