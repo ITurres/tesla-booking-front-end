@@ -15,6 +15,16 @@ const fetchVehicles = createAsyncThunk(
   },
 );
 
+const fetchVehicleById = createAsyncThunk(
+  'vehicles/fetchVehicleById',
+  async (vehicleId) => {
+    const vehicleEndpoint = `${process.env.REACT_APP_TESLA_API_VEHICLES}/${vehicleId}`;
+
+    const vehicle = await apiRequest(vehicleEndpoint);
+    return vehicle;
+  },
+);
+
 const postNewVehicle = createAsyncThunk(
   'vehicles/postNewVehicle',
   async (newVehicleDataBody, { rejectWithValue }) => {
@@ -28,4 +38,4 @@ const postNewVehicle = createAsyncThunk(
   },
 );
 
-export { fetchVehicles, postNewVehicle };
+export { fetchVehicles, fetchVehicleById, postNewVehicle };
