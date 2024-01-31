@@ -8,6 +8,6 @@ export default configureStore({
   reducer: {
     users: usersReducer,
     vehicles: vehiclesReducer,
-    reservationsList: reservationsReducer,
+    reservations: reservationsReducer,
   },
 });
