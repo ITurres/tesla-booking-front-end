@@ -1,0 +1,132 @@
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$light-gray: var.$light-gray;
+
+$screen-min-width: 1400px;
+
+.registration-panel {
+  height: min-content;
+  width: min-content;
+  position: absolute;
+  background-color: $main-color;
+  border: 1px solid $light-gray;
+  z-index: 100;
+  top: 35%;
+  right: 0;
+  padding: 1rem;
+  border-radius: 10px 0 0 10px;
+  animation: slideInFromTheSide 0.7s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 0 1rem 0 $light-gray;
+
+  &:has(.sign-up-form) {
+    top: 30%;
+  }
+
+  .x-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.2rem 0.3rem 0 0.3rem;
+    background-color: $main-color;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-main-color;
+
+      svg {
+        fill: $main-color;
+      }
+    }
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: $light-gray;
+    }
+  }
+
+  &.show {
+    @keyframes slideInFromTheSide {
+      0% {
+        right: -100%;
+      }
+      100% {
+        right: 0;
+      }
+    }
+  }
+
+  &.hide {
+    animation: slideOut 0.7s ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes slideOutFromTheSide {
+      0% {
+        right: 0;
+      }
+      100% {
+        right: -100%;
+      }
+    }
+  }
+
+  @media (min-width: $screen-min-width) {
+    top: unset;
+    bottom: 0;
+    right: 40%;
+    min-width: 350px;
+    transform: translateX(50%);
+    border-radius: 10px 10px 0 0;
+    animation: slideInFromTheBottom 0.7s ease-in-out;
+
+    &:has(.sign-up-form) {
+      top: unset;
+    }
+
+    .x-button {
+      bottom: unset;
+      top: 0;
+      border-bottom-left-radius: unset;
+      border-top-right-radius: unset;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      svg {
+        width: 1rem;
+      }
+    }
+  }
+
+  &.show {
+    @keyframes slideInFromTheBottom {
+      0% {
+        bottom: -100%;
+      }
+      100% {
+        bottom: 0;
+      }
+    }
+  }
+
+  &.hide {
+    animation: slideOut 0.7s ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes slideOutFromTheBottom {
+      0% {
+        bottom: 0;
+      }
+      100% {
+        bottom: -100%;
+      }
+    }
+  }
+}
