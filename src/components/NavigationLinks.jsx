@@ -3,9 +3,11 @@ import { NavLink } from 'react-router-dom';
 import {
   FaCreditCard, FaHouse, FaPlus, FaRegCalendar, FaTrash, FaUserLock, FaUserPlus, FaUserSlash,
 } from 'react-icons/fa6';
-import userLogout from '../features/users/userThunk';
+import { userLogout } from '../features/users/userThunk';
 import getRandomId from '../helpers/getRandomId';
 import '../styles/components/NavigationLinks.scss';
+
+import { activateRegistrationPanel } from '../features/users/usersSlice';
 
 const NavigationLinks = () => {
   const logged = useSelector((state) => state.users.logged);
@@ -14,6 +16,12 @@ const NavigationLinks = () => {
     switch (type) {
       case 'logout':
         dispatch(userLogout());
+        break;
+      case 'login':
+        dispatch(activateRegistrationPanel('login'));
+        break;
+      case 'sign-in':
+        dispatch(activateRegistrationPanel('sign-in'));
         break;
       default:
         break;
@@ -36,10 +44,10 @@ const NavigationLinks = () => {
       id: getRandomId(), name: 'Remove Vehicle', url: 'vehicles/delete', icon: <FaTrash />, level: 2, type: null,
     },
     {
-      id: getRandomId(), name: 'Login', url: null, icon: <FaUserLock />, level: 1, type: null,
+      id: getRandomId(), name: 'Login', url: null, icon: <FaUserLock />, level: 1, type: 'login',
     },
     {
-      id: getRandomId(), name: 'Register', url: null, icon: <FaUserPlus />, level: 1, type: null,
+      id: getRandomId(), name: 'Register', url: null, icon: <FaUserPlus />, level: 1, type: 'sign-in',
     },
     {
       id: getRandomId(), name: 'Logout', url: null, icon: <FaUserSlash />, level: 2, type: 'logout',
