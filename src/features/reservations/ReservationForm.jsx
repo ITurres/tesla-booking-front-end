@@ -7,9 +7,6 @@ import postReservation from './reservationsThunk';
 
 import '../../styles/features/reservations/ReservationForm.scss';
 
-// ! IMPORTANT: once the 'VehicleDetail (Show page)' feature is completed, <===== IMPORTANT.
-// ! the comments in lines 115 to 117 should be addressed. <====================== IMPORTANT.
-
 const locations = [
   { id: 1, name: 'Cordoba, Argentina' },
   { id: 2, name: 'Kabul, Afghanistan' },
@@ -32,6 +29,7 @@ const ReservationForm = () => {
 
   const vehicles = useSelector((state) => state.vehicles.vehicles);
   const userName = useSelector((state) => state.users.userName) || 'Guest';
+  const vehicle = useSelector((state) => state.reservations.vehicle);
 
   const validateFormData = (reservationData) => {
     // eslint-disable-next-line camelcase
@@ -111,16 +109,12 @@ const ReservationForm = () => {
           ))}
         </select>
 
-        <select name="vehicle" id="vehicle" ref={vehicleRef} required>
-          {/* TODO: IF USER SELECTED A VEHICLE FROM THE SHOW PAGE, */}
-          {/* ...THATS THE ONE THAT SHOULD BE SELECTED BY DEFAULT. */}
-          {/* OTHERWISE, ALL THE VEHICLES SHOULD BE AVAILABLE. */}
-
+        <select name="vehicle" id="vehicle" ref={vehicleRef} defaultValue={vehicle} required>
           <option disabled>Select a vehicle</option>
 
           {vehicles.map((vehicle) => (
             <option key={vehicle.id} value={vehicle.id}>
-              {vehicle.model_name}
+              {vehicle.carModelName}
             </option>
           ))}
         </select>
