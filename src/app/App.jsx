@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import VehiclesPage from '../pages/VehiclesPage';
 import ReservationPage from '../pages/ReservationPage';
 import AddVehiclePage from '../pages/AddVehiclePage';
+import VehicleDetail from '../features/vehicles/VehicleDetail';
 
 function App() {
   const userLogged = useSelector((state) => state.users.logged);
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<VehiclesPage />} />
+          <Route path="vehicles/:vehicleId" element={<VehicleDetail />} />
           {userLogged && (
             <>
               <Route path="reservations/new" element={<ReservationPage />} />
