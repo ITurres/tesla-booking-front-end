@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import createAsyncReducer from '../../helpers/createAsyncThunk';
+import createAsyncReducer from '../../helpers/createAsyncReducer';
+
 import { fetchVehicles, fetchVehicleById, postNewVehicle } from './vehiclesThunk';
 
 const vehiclesSlice = createSlice({
