@@ -1,0 +1,181 @@
+@use '../../variables' as var;
+
+$main-color: var.$main-color;
+$light-gray: var.$light-gray;
+$dark-gray: var.$dark-gray;
+$secondary-main-color: var.$secondary-main-color;
+$third-main-color: var.$third-main-color;
+$heading-font: var.$heading-font;
+
+$screen-min-width: 992px;
+
+.page {
+  height: 100%;
+  position: relative;
+
+  @media only screen and (min-width: $screen-min-width) {
+    width: 80%;
+    margin-inline-start: auto;
+  }
+}
+
+.loader {
+  opacity: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  background-color: $main-color;
+  transition: all 0.5s ease;
+
+  svg {
+    width: 10%;
+    height: 10%;
+    fill: $secondary-main-color;
+    animation: spin 1s linear infinite;
+  }
+}
+
+.error {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $main-color;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    fill: $main-color;
+    background-color: $secondary-main-color;
+    border-radius: 50%;
+  }
+
+  span {
+    color: $dark-gray;
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
+.details {
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  @media only screen and (min-width: $screen-min-width) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  a {
+    padding: 10px 20px;
+    color: $main-color;
+    text-decoration: none;
+    font: bold 1rem $heading-font;
+    background-color: $secondary-main-color;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+  }
+}
+
+.text {
+  display: flex;
+  gap: 10px;
+  padding: 1rem;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0;
+
+  @media only screen and (min-width: $screen-min-width) {
+    width: 35%;
+  }
+
+  h2 {
+    font: bold 2rem $heading-font;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+    text-align: start;
+    flex-direction: column;
+    margin: 0;
+
+    li {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: $third-main-color;
+    }
+
+    :nth-child(odd) {
+      background-color: $light-gray;
+    }
+  }
+
+  p {
+    font-style: italic;
+    text-align: justify;
+    margin: 0;
+  }
+
+  span {
+    font: bold 2rem $heading-font;
+  }
+
+  a {
+    padding: 10px 20px;
+    color: $main-color;
+    text-decoration: none;
+    font: bold 1.5rem $heading-font;
+    background-color: $secondary-main-color;
+    border-radius: 10px;
+  }
+
+  @media only screen and (min-width: $screen-min-width) {
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+.visible {
+  display: flex;
+}
+
+.active {
+  opacity: 1;
+}
+
+@keyframes spin {
+  from { transform: rotateZ(0); }
+  to { transform: rotateZ(360deg); }
+}
