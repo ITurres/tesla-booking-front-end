@@ -38,18 +38,18 @@ $screen-min-width: 1400px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: $light-gray;
+    }
+
     &:hover {
       background-color: $secondary-main-color;
 
       svg {
         fill: $main-color;
       }
-    }
-
-    svg {
-      width: 1.2rem;
-      height: 1.2rem;
-      fill: $light-gray;
     }
   }
 
@@ -58,6 +58,7 @@ $screen-min-width: 1400px;
       0% {
         right: -100%;
       }
+
       100% {
         right: 0;
       }
@@ -72,6 +73,7 @@ $screen-min-width: 1400px;
       0% {
         right: 0;
       }
+
       100% {
         right: -100%;
       }
@@ -103,29 +105,31 @@ $screen-min-width: 1400px;
         width: 1rem;
       }
     }
-  }
 
-  &.show {
-    @keyframes slideInFromTheBottom {
-      0% {
-        bottom: -100%;
-      }
-      100% {
-        bottom: 0;
+    &.show {
+      @keyframes slideInFromTheBottom {
+        0% {
+          bottom: -100%;
+        }
+
+        100% {
+          bottom: 0;
+        }
       }
     }
-  }
 
-  &.hide {
-    animation: slideOut 0.7s ease-in-out;
-    animation-fill-mode: forwards;
+    &.hide {
+      animation: slideOut 0.7s ease-in-out;
+      animation-fill-mode: forwards;
 
-    @keyframes slideOutFromTheBottom {
-      0% {
-        bottom: 0;
-      }
-      100% {
-        bottom: -100%;
+      @keyframes slideOutFromTheBottom {
+        0% {
+          bottom: 0;
+        }
+
+        100% {
+          bottom: -100%;
+        }
       }
     }
   }
