@@ -3,8 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import postReservation from './reservationsThunk';
 
 const reservationSlice = createSlice({
-  name: 'reservationsList',
+  name: 'reservations',
   initialState: {
+    vehicle: null,
     reservations: [],
     loading: false,
     error: null,
@@ -12,6 +13,9 @@ const reservationSlice = createSlice({
   reducers: {
     addReservation: (state, { payload }) => {
       state.reservations = payload;
+    },
+    selectVehicle: (state, { payload }) => {
+      state.vehicle = payload;
     },
   },
   extraReducers: (builder) => {
@@ -30,6 +34,6 @@ const reservationSlice = createSlice({
   },
 });
 
-export const { addReservation } = reservationSlice.actions;
+export const { addReservation, selectVehicle } = reservationSlice.actions;
 
 export default reservationSlice.reducer;

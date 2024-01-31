@@ -23,7 +23,7 @@ const SplideCarousel = ({ vehicles }) => (
       type: 'loop',
       perPage: 3,
       perMove: 1,
-      width: '85%',
+      width: '80%',
       height: '100%',
       gap: '0rem',
       cover: false,
