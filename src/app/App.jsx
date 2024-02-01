@@ -6,6 +6,7 @@ import VehiclesPage from '../pages/VehiclesPage';
 import ReservationPage from '../pages/ReservationPage';
 import AddVehiclePage from '../pages/AddVehiclePage';
 import VehicleDetail from '../features/vehicles/VehicleDetail';
+import ReservationList from '../features/reservations/ReservationsList';
 
 function App() {
   const userLogged = useSelector((state) => state.users.logged);
@@ -18,6 +19,7 @@ function App() {
           <Route path="vehicles/:vehicleId" element={<VehicleDetail />} />
           {userLogged && (
             <>
+              <Route path="reservations" element={<ReservationList />} />
               <Route path="reservations/new" element={<ReservationPage />} />
               <Route path="vehicles/new" element={<AddVehiclePage />} />
             </>
