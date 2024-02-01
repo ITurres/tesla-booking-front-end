@@ -11,7 +11,7 @@ $heading-font: var.$heading-font;
 
 $success-color: #4caf50;
 
-html {
+html:has(.registration-panel) {
   overflow: hidden;
 }
 
@@ -101,6 +101,10 @@ select {
 }
 
 @keyframes spin {
-  from { transform: rotateZ(0); }
-  to { transform: rotateZ(360deg); }
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
