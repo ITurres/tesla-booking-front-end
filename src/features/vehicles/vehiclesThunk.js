@@ -41,4 +41,19 @@ const postNewVehicle = createAsyncThunk(
   },
 );
 
-export { fetchVehicles, fetchVehicleById, postNewVehicle };
+const deleteVehicleById = createAsyncThunk(
+  'vehicles/deleteVehicleById',
+  async (vehicleId, { rejectWithValue }) => {
+    const vehicleEndpoint = `${process.env.REACT_APP_TESLA_API_VEHICLES}/${vehicleId}`;
+
+    try {
+      return await apiRequest(vehicleEndpoint, 'DELETE');
+    } catch (error) {
+      return rejectWithValue(error || 'Something went wrong...');
+    }
+  },
+);
+
+export {
+  fetchVehicles, fetchVehicleById, postNewVehicle, deleteVehicleById,
+};

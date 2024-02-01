@@ -8,6 +8,7 @@ import AddVehiclePage from '../pages/AddVehiclePage';
 import VehicleDetail from '../features/vehicles/VehicleDetail';
 import ReservationList from '../features/reservations/ReservationsList';
 import PageNotFound from '../components/PageNotFound';
+import DeleteVehicleList from '../features/vehicles/DeleteVehicleList';
 
 function App() {
   const userLogged = useSelector((state) => state.users.logged);
@@ -23,6 +24,7 @@ function App() {
               <Route path="/reservations" element={<ReservationList />} />
               <Route path="/reservations/new" element={<ReservationPage />} />
               <Route path="/vehicles/new" element={<AddVehiclePage />} />
+              <Route path="/vehicles/delete" element={<DeleteVehicleList />} />
             </>
           )}
         </Route>

@@ -1,0 +1,190 @@
+@use '../../variables' as var;
+
+$main-color: var.$main-color;
+$light-gray: var.$light-gray;
+$dark-gray: var.$dark-gray;
+$secondary-main-color: var.$secondary-main-color;
+$third-main-color: var.$third-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$heading-font: var.$heading-font;
+
+$screen-min-width: 992px;
+
+.delete_page {
+  height: 100%;
+  overflow-y: auto;
+
+  h2 {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 1rem;
+  }
+
+  @media only screen and (min-width: $screen-min-width) {
+    width: 80%;
+    position: relative;
+    margin-inline-start: auto;
+
+    h2 {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.delete_loader {
+  opacity: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  background-color: $main-color;
+  transition: all 0.5s ease;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: $secondary-main-color;
+    animation: spin 1s linear infinite;
+  }
+}
+
+.delete_error {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  gap: 10px;
+  color: $dark-gray;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $main-color;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    fill: $main-color;
+    background-color: $secondary-main-color;
+    border-radius: 50%;
+  }
+
+  span {
+    color: $dark-gray;
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
+.delete_dialog {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba($main-color, 80%);
+  border: none;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+
+  div {
+    width: 200px;
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $main-color;
+    border: 1px solid $third-main-color;
+    border-radius: 10px;
+    margin: auto;
+
+    svg {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      fill: $main-color;
+      background-color: $secondary-main-color;
+      border-radius: 50%;
+    }
+
+    span {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+  }
+}
+
+.delete_list {
+  display: grid;
+  gap: 25px;
+  padding: 0 10px 10px;
+  list-style: none;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0;
+
+  @media only screen and (min-width: $screen-min-width) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 2rem;
+  }
+
+  li {
+    height: 110px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    border: 1px solid $third-main-color;
+    border-radius: 5px;
+
+    img {
+      max-width: 60%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    div {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h3 {
+        font: bold 1rem $heading-font;
+        margin: 0;
+      }
+
+      span {
+        color: $dark-gray;
+        font-size: 1.2rem;
+        font-weight: bolder;
+      }
+
+      button {
+        width: 100%;
+        font: bold 0.8rem $heading-font;
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.delete_visible {
+  display: flex;
+}
+
+.delete_active {
+  opacity: 1;
+}
