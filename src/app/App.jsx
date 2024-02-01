@@ -7,6 +7,7 @@ import ReservationPage from '../pages/ReservationPage';
 import AddVehiclePage from '../pages/AddVehiclePage';
 import VehicleDetail from '../features/vehicles/VehicleDetail';
 import ReservationList from '../features/reservations/ReservationsList';
+import PageNotFound from '../components/PageNotFound';
 
 function App() {
   const userLogged = useSelector((state) => state.users.logged);
@@ -25,7 +26,7 @@ function App() {
             </>
           )}
         </Route>
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
