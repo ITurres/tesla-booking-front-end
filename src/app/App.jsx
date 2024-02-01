@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Layout from '../components/Layout';
@@ -13,22 +13,22 @@ function App() {
   const userLogged = useSelector((state) => state.users.logged);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<VehiclesPage />} />
-          <Route path="vehicles/:vehicleId" element={<VehicleDetail />} />
+          <Route path="/vehicles/:vehicleId" element={<VehicleDetail />} />
           {userLogged && (
             <>
-              <Route path="reservations" element={<ReservationList />} />
-              <Route path="reservations/new" element={<ReservationPage />} />
-              <Route path="vehicles/new" element={<AddVehiclePage />} />
+              <Route path="/reservations" element={<ReservationList />} />
+              <Route path="/reservations/new" element={<ReservationPage />} />
+              <Route path="/vehicles/new" element={<AddVehiclePage />} />
             </>
           )}
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
