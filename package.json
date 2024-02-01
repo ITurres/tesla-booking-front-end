@@ -2,7 +2,7 @@
   "name": "x",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://iturres.github.io/tesla-booking-front-end",
   "dependencies": {
     "axios": "^1.4.0",
     "prop-types": "^15.8.1",
@@ -25,11 +25,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test": "react-scripts test",
-    "deploy": "gh-pages -d build"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
