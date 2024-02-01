@@ -1,30 +1,40 @@
-[
-  {
-    "id": 1,
-    "user_id": 1,
-    "car_id": 3,
-    "date": "2024-01-20",
-    "location": "New York"
+{
+  "status": {
+    "code": 200,
+    "message": "Success: reservations data retrieved successfully"
   },
-  {
-    "id": 2,
-    "user_id": 2,
-    "car_id": 1,
-    "date": "2024-01-21",
-    "location": "Los Angeles"
-  },
-  {
-    "id": 3,
-    "user_id": 3,
-    "car_id": 4,
-    "date": "2024-01-22",
-    "location": "Chicago"
-  },
-  {
-    "id": 4,
-    "user_id": 1,
-    "car_id": 5,
-    "date": "2024-01-23",
-    "location": "San Francisco"
-  }
-]
+  "data": [
+    {
+      "id": 1,
+      "rentalPrice": 150,
+      "carModelName": "Model S",
+      "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png",
+      "date": "2024-01-20",
+      "location": "New York"
+    },
+    {
+      "id": 2,
+      "rentalPrice": 120,
+      "carModelName": "Model 3",
+      "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png",
+      "date": "2024-01-21",
+      "location": "Los Angeles"
+    },
+    {
+      "id": 3,
+      "rentalPrice": 150,
+      "carModelName": "Model S",
+      "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png",
+      "date": "2024-01-22",
+      "location": "Chicago"
+    },
+    {
+      "id": 4,
+      "rentalPrice": 120,
+      "carModelName": "Model 3",
+      "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png",
+      "date": "2024-01-23",
+      "location": "San Francisco"
+    }
+  ]
+}

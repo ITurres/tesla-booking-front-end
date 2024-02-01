@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import postReservation from './reservationsThunk';
+import { postReservation, fetchReservations } from './reservationsThunk';
 
 const reservationSlice = createSlice({
   name: 'reservations',
@@ -28,6 +28,19 @@ const reservationSlice = createSlice({
         state.reservations = action.payload;
       })
       .addCase(postReservation.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchReservations.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchReservations.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.reservations = action.payload;
+      })
+      .addCase(fetchReservations.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

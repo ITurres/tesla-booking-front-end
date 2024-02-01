@@ -12,7 +12,7 @@ menu {
   margin: 0;
 }
 
-.button {
+.panel_button {
   width: 50px;
   height: 50px;
   position: absolute;
@@ -39,7 +39,7 @@ menu {
   }
 }
 
-.panel {
+.panel_menu {
   opacity: 0;
   display: none;
   position: fixed;
@@ -141,7 +141,7 @@ menu {
   }
 }
 
-.visible {
+.panel_visible {
   display: flex;
   transition: 0.4s all 0.1s ease;
 
@@ -150,7 +150,7 @@ menu {
   }
 }
 
-.active {
+.panel_active {
   opacity: 1;
 
   div {
@@ -158,7 +158,7 @@ menu {
   }
 }
 
-.socials {
+.panel_socials {
   display: flex;
   gap: 10px;
   padding: 0 0 10px;

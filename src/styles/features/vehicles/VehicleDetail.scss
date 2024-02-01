@@ -9,17 +9,17 @@ $heading-font: var.$heading-font;
 
 $screen-min-width: 992px;
 
-.page {
+.vehicle_page {
   height: 100%;
-  position: relative;
 
   @media only screen and (min-width: $screen-min-width) {
     width: 80%;
+    position: relative;
     margin-inline-start: auto;
   }
 }
 
-.loader {
+.vehicle_loader {
   opacity: 0;
   display: none;
   align-items: center;
@@ -33,14 +33,14 @@ $screen-min-width: 992px;
   transition: all 0.5s ease;
 
   svg {
-    width: 10%;
-    height: 10%;
+    width: 50px;
+    height: 50px;
     fill: $secondary-main-color;
     animation: spin 1s linear infinite;
   }
 }
 
-.error {
+.vehicle_error {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -53,12 +53,17 @@ $screen-min-width: 992px;
   background-color: $main-color;
 
   svg {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     fill: $main-color;
     background-color: $secondary-main-color;
     border-radius: 50%;
+  }
+
+  h2 {
+    color: $dark-gray;
+    font-size: 1rem;
   }
 
   span {
@@ -68,7 +73,7 @@ $screen-min-width: 992px;
   }
 }
 
-.details {
+.vehicle_details {
   height: 100%;
   overflow-y: auto;
   box-sizing: border-box;
@@ -79,7 +84,7 @@ $screen-min-width: 992px;
   }
 }
 
-.image {
+.vehicle_image {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -102,7 +107,7 @@ $screen-min-width: 992px;
   }
 }
 
-.text {
+.vehicle_text {
   display: flex;
   gap: 10px;
   padding: 1rem;
@@ -167,15 +172,10 @@ $screen-min-width: 992px;
   }
 }
 
-.visible {
+.vehicle_visible {
   display: flex;
 }
 
-.active {
+.vehicle_active {
   opacity: 1;
-}
-
-@keyframes spin {
-  from { transform: rotateZ(0); }
-  to { transform: rotateZ(360deg); }
 }

@@ -108,7 +108,7 @@ const NavigationLinks = () => {
   ];
   return (
     <nav>
-      <ul className="list">
+      <ul className="panel_list">
         {links.map((link) => {
           if ((!logged && link.level !== 2) || (logged && link.level !== 1)) {
             return (

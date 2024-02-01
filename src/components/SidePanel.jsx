@@ -18,19 +18,19 @@ const SidePanel = () => {
   ];
   const menuToggle = (opened) => {
     if (opened) {
-      panel.current.classList.add('visible');
-      setTimeout(() => panel.current.classList.add('active'));
+      panel.current.classList.add('panel_visible');
+      setTimeout(() => panel.current.classList.add('panel_active'));
     } else {
-      panel.current.classList.remove('active');
-      setTimeout(() => panel.current.classList.remove('visible'), 500);
+      panel.current.classList.remove('panel_active');
+      setTimeout(() => panel.current.classList.remove('panel_visible'), 500);
     }
   };
   return (
     <menu>
-      <button type="button" aria-label="menu" className="button" onClick={() => menuToggle(true)}>
+      <button type="button" aria-label="menu" className="panel_button" onClick={() => menuToggle(true)}>
         <FaBars />
       </button>
-      <div className="panel" ref={panel}>
+      <div className="panel_menu" ref={panel}>
         <div>
           <span>
             <img src={Logo} alt="Tesla Booking" />
@@ -39,7 +39,7 @@ const SidePanel = () => {
             </button>
           </span>
           <NavigationLinks />
-          <ul className="socials">
+          <ul className="panel_socials">
             {socials.map((social) => (
               <li key={social.id}>
                 <a href="/">{social.icon}</a>
