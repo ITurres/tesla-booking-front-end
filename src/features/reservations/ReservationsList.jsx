@@ -46,7 +46,7 @@ const ReservationList = () => {
   return (
     <section className="reservations_page">
       <div className="reservations_loader reservations_visible reservations_active" ref={loader}><FaSpinner /></div>
-      {(error !== null || reservations.length === 0) ? (
+      {(error !== null || reservations || reservations.length === 0) ? (
         <div className="reservations_error">
           <FaExclamation />
           <h2>{error !== null ? error : 'No Reservations available!'}</h2>

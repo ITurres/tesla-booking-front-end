@@ -1,0 +1,45 @@
+@use '../../variables' as var;
+
+$light-gray: var.$light-gray;
+$secondary-main-color: var.$secondary-main-color;
+
+$fail-color: #ed2a1c;
+$screen-min-width: 1400px;
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  h3 {
+    text-align: center;
+
+    span {
+      color: $secondary-main-color;
+    }
+  }
+
+  input {
+    background-color: rgba($light-gray, 0.3);
+  }
+
+  .registration-error-text {
+    text-align: center;
+    color: $fail-color;
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .btn {
+    margin: 0.4rem;
+  }
+
+  @media screen and (min-width: $screen-min-width) {
+    input {
+      width: 90%;
+    }
+  }
+}
