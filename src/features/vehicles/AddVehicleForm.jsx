@@ -110,8 +110,14 @@ const AddVehicleForm = () => {
 
       dispatch(postNewVehicle(newVehicleData))
         .then((vehicleDataFromAPI) => {
-          // ? the response 'vehicleDataFromAPI' is already formatted as an object.
-          dispatch(addNewVehicle(vehicleDataFromAPI));
+          // ? If the payload is other than an object, it means there was an error.
+          // ? an example of this is: e.g string: 'Error: Invalid Token'.
+          if (typeof vehicleDataFromAPI.payload !== 'object') {
+            setButtonText('There was an error type adding the new vehicle.');
+            return;
+          }
+
+          dispatch(addNewVehicle(vehicleDataFromAPI.payload));
 
           resetForm();
           setButtonSuccess(true);

@@ -2,7 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import createAsyncReducer from '../../helpers/createAsyncReducer';
 
-import { fetchVehicles, fetchVehicleById, postNewVehicle } from './vehiclesThunk';
+import {
+  fetchVehicles,
+  fetchVehicleById,
+  postNewVehicle,
+} from './vehiclesThunk';
 
 const vehiclesSlice = createSlice({
   name: 'vehicles',
@@ -14,7 +18,10 @@ const vehiclesSlice = createSlice({
   },
   reducers: {
     addNewVehicle(state, { payload }) {
-      return { ...state, vehicles: [...state.vehicles, payload] };
+      // ? when user is in 'AddNewVehicle' page, the array is empty.
+      // ? thats why we need to create a new array with the new vehicle
+      // ? to be iterable in 'VehiclesList' component.
+      state.vehicles = [payload];
     },
     selectVehicle: (state, { payload }) => {
       state.vehicle = payload;
