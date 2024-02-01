@@ -69,5 +69,9 @@ $overlay-bg-transparency: 0;
 
   @media screen and (min-width: 992px) {
     margin-left: 20%;
+
+    &__demo-video {
+      width: max-content;
+    }
   }
 }

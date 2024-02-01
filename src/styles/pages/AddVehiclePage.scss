@@ -71,6 +71,7 @@ main:has(.add-vehicle-page) {
       z-index: -1;
       right: -30%;
       height: 100%;
+      // stylelint-disable-next-line
       width: -webkit-fill-available;
     }
   }
