@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { addReservation } from './reservationsSlice';
-import postReservation from './reservationsThunk';
+import { postReservation } from './reservationsThunk';
 
 import '../../styles/features/reservations/ReservationForm.scss';
 
