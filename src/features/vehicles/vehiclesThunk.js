@@ -17,11 +17,14 @@ const fetchVehicles = createAsyncThunk(
 
 const fetchVehicleById = createAsyncThunk(
   'vehicles/fetchVehicleById',
-  async (vehicleId) => {
+  async (vehicleId, { rejectWithValue }) => {
     const vehicleEndpoint = `${process.env.REACT_APP_TESLA_API_VEHICLES}/${vehicleId}`;
 
-    const vehicle = await apiRequest(vehicleEndpoint);
-    return vehicle;
+    try {
+      return await apiRequest(vehicleEndpoint);
+    } catch (error) {
+      return rejectWithValue(error || 'Something went wrong...');
+    }
   },
 );
 
