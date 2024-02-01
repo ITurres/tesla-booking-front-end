@@ -58,6 +58,21 @@ main:has(.add-vehicle-page) {
 
   @media screen and (min-width: $screen-min-width) {
     min-height: 100%;
+    background-image: unset;
+    background-color: unset;
+
+    &__desktop-background {
+      background-image: url($section-bg-image);
+      background-color: $fourth-main-color;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: -1;
+      right: -30%;
+      height: 100%;
+      width: -webkit-fill-available;
+    }
   }
 
   @media screen and (min-height: $screen-min-height) {

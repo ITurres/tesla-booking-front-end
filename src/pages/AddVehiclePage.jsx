@@ -11,6 +11,7 @@ const AddVehiclePage = () => {
 
   return (
     <section className="add-vehicle-page">
+      <div className="add-vehicle-page__desktop-background" />
       <div className="add-vehicle-page__content">
         <h1>
           Go on and add a new
