@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/tesla-booking-front-end/static/css/main.47820dd5.css",
+    "main.js": "/tesla-booking-front-end/static/js/main.e1dd79ba.js",
+    "static/media/tesla-red-word-logo.png": "/tesla-booking-front-end/static/media/tesla-red-word-logo.783174ef5075ee3611e6.png",
+    "index.html": "/tesla-booking-front-end/index.html",
+    "main.47820dd5.css.map": "/tesla-booking-front-end/static/css/main.47820dd5.css.map",
+    "main.e1dd79ba.js.map": "/tesla-booking-front-end/static/js/main.e1dd79ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47820dd5.css",
+    "static/js/main.e1dd79ba.js"
+  ]
+}

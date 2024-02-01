@@ -1,0 +1,8 @@
+{
+  "status": 200,
+  "message": "Success: logged user successfully",
+  "data": {
+    "user_name": "name",
+    "token": "erwgrty5j68me6m"
+  }
+}
