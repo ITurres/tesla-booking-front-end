@@ -16,16 +16,16 @@ const VehicleDetail = () => {
   const logged = useSelector((state) => state.users.logged);
   const loading = useSelector((state) => state.vehicles.loading);
   const error = useSelector((state) => state.vehicles.error);
-  const vehicle = useSelector((state) => state.vehicles.vehicle) || null;
+  const vehicle = useSelector((state) => state.vehicles.vehicle);
 
   const toggleLoader = (open) => {
-    if (open && !loader.current.classList.contains('visible')) {
-      loader.current.classList.add('visible');
-      setTimeout(() => loader.current.classList.add('active'));
+    if (open && !loader.current.classList.contains('vehicle_visible')) {
+      loader.current.classList.add('vehicle_visible');
+      setTimeout(() => loader.current.classList.add('vehicle_active'));
     } else {
       setTimeout(() => {
-        loader.current.classList.remove('active');
-        setTimeout(() => loader.current.classList.remove('visible'), 500);
+        loader.current.classList.remove('vehicle_active');
+        setTimeout(() => loader.current.classList.remove('vehicle_visible'), 500);
       }, 100);
     }
   };
@@ -49,21 +49,21 @@ const VehicleDetail = () => {
   }, [loading]);
 
   return (
-    <section className="page">
-      <div className="loader visible active" ref={loader}><FaSpinner /></div>
+    <section className="vehicle_page">
+      <div className="vehicle_loader vehicle_visible vehicle_active" ref={loader}><FaSpinner /></div>
       {error !== null ? (
-        <div className="error">
+        <div className="vehicle_error">
           <FaExclamation />
           <h2>{error}</h2>
           <button type="button" className="btn" onClick={() => { setRefetch(true); }}>Reload</button>
         </div>
       ) : vehicle && (
-        <div className="details">
-          <div className="image">
+        <div className="vehicle_details">
+          <div className="vehicle_image">
             <img src={vehicle.image} alt={vehicle.carModelName} />
             <Link to="/">Back</Link>
           </div>
-          <div className="text">
+          <div className="vehicle_text">
             <h2>{vehicle.carModelName}</h2>
             <ul>
               {vehicle.performanceDetails.map((item) => <li key={getRandomId()}>{item}</li>)}
