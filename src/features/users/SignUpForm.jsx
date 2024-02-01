@@ -7,6 +7,7 @@ import {
   activateRegistrationPanel,
   deactivateRegistrationPanel,
   setUserSessionToken,
+  setUserEmailForLoginAfterSignUp,
 } from './usersSlice';
 
 import { userSignUp } from './userThunk';
@@ -42,6 +43,11 @@ const SignUpForm = () => {
           }
 
           dispatch(setUserSessionToken(response.payload.token));
+          dispatch(
+            setUserEmailForLoginAfterSignUp({
+              email: response.payload.email,
+            }),
+          );
 
           setTimeout(() => {
             dispatch(deactivateRegistrationPanel());

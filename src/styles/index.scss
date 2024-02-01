@@ -11,6 +11,10 @@ $heading-font: var.$heading-font;
 
 $success-color: #4caf50;
 
+html {
+  overflow: hidden;
+}
+
 body {
   background-color: $main-color;
   color: $fourth-main-color;

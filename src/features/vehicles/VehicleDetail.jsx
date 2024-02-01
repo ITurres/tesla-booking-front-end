@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { FaExclamation, FaSpinner } from 'react-icons/fa6';
 import { fetchVehicleById } from './vehiclesThunk';
+import { activateRegistrationPanel } from '../users/usersSlice';
 import { selectVehicle } from '../reservations/reservationsSlice';
 import getRandomId from '../../helpers/getRandomId';
 import setPageTitle from '../../helpers/setPageTitle';
@@ -25,7 +26,10 @@ const VehicleDetail = () => {
     } else {
       setTimeout(() => {
         loader.current.classList.remove('vehicle_active');
-        setTimeout(() => loader.current.classList.remove('vehicle_visible'), 500);
+        setTimeout(
+          () => loader.current.classList.remove('vehicle_visible'),
+          500,
+        );
       }, 100);
     }
   };
@@ -48,34 +52,66 @@ const VehicleDetail = () => {
     toggleLoader(false);
   }, [loading]);
 
+  const handleLoginPanel = () => {
+    dispatch(activateRegistrationPanel('login'));
+  };
+
   return (
     <section className="vehicle_page">
-      <div className="vehicle_loader vehicle_visible vehicle_active" ref={loader}><FaSpinner /></div>
+      <div
+        className="vehicle_loader vehicle_visible vehicle_active"
+        ref={loader}
+      >
+        <FaSpinner />
+      </div>
       {error !== null ? (
         <div className="vehicle_error">
           <FaExclamation />
           <h2>{error}</h2>
-          <button type="button" className="btn" onClick={() => { setRefetch(true); }}>Reload</button>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => {
+              setRefetch(true);
+            }}
+          >
+            Reload
+          </button>
         </div>
-      ) : vehicle && (
-        <div className="vehicle_details">
-          <div className="vehicle_image">
-            <img src={vehicle.image} alt={vehicle.carModelName} />
-            <Link to="/">Back</Link>
+      ) : (
+        vehicle && (
+          <div className="vehicle_details">
+            <div className="vehicle_image">
+              <img src={vehicle.image} alt={vehicle.carModelName} />
+              <Link to="/">Back</Link>
+            </div>
+            <div className="vehicle_text">
+              <h2>{vehicle.carModelName}</h2>
+              <ul>
+                {vehicle.performanceDetails.map((item) => (
+                  <li key={getRandomId()}>{item}</li>
+                ))}
+              </ul>
+              <p>{vehicle.description}</p>
+              <span>
+                $
+                {vehicle.rentalPrice}
+              </span>
+              {logged ? (
+                <Link
+                  to="/reservations/new"
+                  onClick={() => dispatch(selectVehicle(vehicle.id))}
+                >
+                  Reserve
+                </Link>
+              ) : (
+                <a href="#login" onClick={() => handleLoginPanel()}>
+                  Login
+                </a>
+              )}
+            </div>
           </div>
-          <div className="vehicle_text">
-            <h2>{vehicle.carModelName}</h2>
-            <ul>
-              {vehicle.performanceDetails.map((item) => <li key={getRandomId()}>{item}</li>)}
-            </ul>
-            <p>{vehicle.description}</p>
-            <span>
-              $
-              {vehicle.rentalPrice}
-            </span>
-            {logged ? (<Link to="/reservations/new" onClick={() => dispatch(selectVehicle(vehicle.id))}>Reserve</Link>) : (<Link to="/">Login</Link>)}
-          </div>
-        </div>
+        )
       )}
     </section>
   );

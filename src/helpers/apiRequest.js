@@ -9,21 +9,39 @@ const apiRequest = async (path, method = 'GET', body = {}) => {
     fetchOptions.body = JSON.stringify(body);
   }
 
+  // ? If the user has signup/login, we have the token, so we can
+  // ? have access to user's related data.
+  if (document.cookie.includes('tesla-booking-user-token')) {
+    fetchOptions.headers.Authorization = `${document.cookie.split('=')[1]}`;
+  }
+
   try {
     const response = await fetch(`${baseUrl}${path}`, fetchOptions);
+    if (response.status === 422) {
+      const result = await response.json();
+
+      throw new Error(result.status.message);
+    }
 
     if (response.ok) {
       const result = await response.json();
 
+      if (result.status === 200) {
+        return result;
+      }
+
+      // ? our API response.
       if (result.status.code === 200) {
         return result.data;
       }
 
-      throw new Error(result.status.message);
+      throw new Error(result.status.message || result.error.message);
     }
-    throw new Error('Something went wrong...');
+
+    const errorResult = await response.json();
+    throw new Error(errorResult.status.message || 'Something went wrong...');
   } catch (error) {
-    throw new Error(error.message);
+    throw error.message || 'apiRequest: Something went wrong...';
   }
 };
 
