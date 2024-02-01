@@ -1,0 +1,144 @@
+@use '../../variables' as var;
+
+$main-color: var.$main-color;
+$light-gray: var.$light-gray;
+$dark-gray: var.$dark-gray;
+$secondary-main-color: var.$secondary-main-color;
+$third-main-color: var.$third-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$heading-font: var.$heading-font;
+
+$screen-min-width: 992px;
+
+.reservations_page {
+  height: 100%;
+  overflow-y: auto;
+
+  h2 {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 1rem;
+  }
+
+  @media only screen and (min-width: $screen-min-width) {
+    width: 80%;
+    position: relative;
+    margin-inline-start: auto;
+
+    h2 {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.reservations_loader {
+  opacity: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  background-color: $main-color;
+  transition: all 0.5s ease;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: $secondary-main-color;
+    animation: spin 1s linear infinite;
+  }
+}
+
+.reservations_error {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  gap: 10px;
+  color: $dark-gray;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $main-color;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    fill: $main-color;
+    background-color: $secondary-main-color;
+    border-radius: 50%;
+  }
+
+  span {
+    color: $dark-gray;
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
+.reservations_list {
+  display: grid;
+  gap: 25px;
+  padding: 0 10px 10px;
+  list-style: none;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0;
+
+  @media only screen and (min-width: $screen-min-width) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 2rem;
+    gap: 50px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      width: 100%;
+    }
+
+    h3 {
+      display: flex;
+      justify-content: space-between;
+      font: bold 1rem $heading-font;
+      margin: 0 0 10px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: space-between;
+
+      time,
+      span {
+        display: flex;
+        padding: 10px;
+        color: $dark-gray;
+        font-size: 0.8rem;
+        background-color: $third-main-color;
+        border-radius: 5px;
+      }
+
+      svg {
+        color: $fourth-main-color;
+        margin-inline-end: 10px;
+      }
+    }
+  }
+}
+
+.reservations_visible {
+  display: flex;
+}
+
+.reservations_active {
+  opacity: 1;
+}
