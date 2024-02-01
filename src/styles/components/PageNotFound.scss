@@ -1,0 +1,51 @@
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$dark-gray: var.$dark-gray;
+$light-gray: var.$light-gray;
+
+$not-found-page-background-image: 'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Powerwall-01-Desktop.jpg';
+
+.not-found-page,
+.not-found-page__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.not-found-page {
+  background-image: url($not-found-page-background-image);
+  background-color: $light-gray; // ? Fallback if image is not loaded.
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  &__content-wrapper {
+    background-color: rgba($main-color, 0.3);
+    height: max-content;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  h1,
+  h4 {
+    margin: 0.5rem;
+  }
+
+  h1 {
+    span {
+      color: $secondary-main-color;
+    }
+  }
+
+  .btn {
+    border: 3px solid $secondary-main-color;
+    margin-top: 0.5rem;
+  }
+}
