@@ -12,6 +12,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [📊 Kanban](#kanban-board)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -21,7 +22,6 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -35,7 +35,7 @@
 
 # 📖 Tesla | Book a Ride App <a name="about-project"></a>
 
-**Tesla | Book a Ride App** is a project developed by Front-end [Arturo Emanuel Guerra Iturres](https://www.linkedin.com/in/arturoemanuelguerraiturres/), [Mahammad Mostafa](https://www.linkedin.com/in/mahammad-mostafa/), and Back-end [Demes Ameneshoa](https://www.linkedin.com/in/demesameneshoa/) and [Fatema Nazari](https://www.linkedin.com/in/fatemanazari/).
+**Tesla | Book a Ride App** Team (4): is a project developed by Front-end [Arturo Emanuel Guerra Iturres](https://www.linkedin.com/in/arturoemanuelguerraiturres/), [Mahammad Mostafa](https://www.linkedin.com/in/mahammad-mostafa/), and Back-end [Demes Ameneshoa](https://www.linkedin.com/in/demesameneshoa/) and [Fatema Nazari](https://www.linkedin.com/in/fatemanazari/).
 
 > Book your ideal Tesla model effortlessly with our new
 > Tesla vehicle booking app! Enjoy daily rates on our five available models,
@@ -67,6 +67,25 @@
 - Understand principles of strong teamwork (being reliable, committed, and consistent) and how to apply them in group projects.
 - Recognize the value of making equal contributions to group projects to produce the best outcome.
 - Use empty Kanban board to manage tasks with team and own time on the project.
+
+---
+
+<!-- ! Kanban Board -->
+
+### 📊 Kanban Board <a name="kanban-board"></a>
+
+- [Tesla Booking Front-end Kanban Board](https://github.com/users/ITurres/projects/6/views/1)
+
+<details>
+  <summary>Click to see the project's Kanban board initial state</summary>
+    
+![frontend-kanban-initial-state](https://github.com/ITurres/tesla-booking-front-end/assets/100724715/2e2cc352-b84c-49dc-b950-475837d2399c)
+
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -242,7 +261,7 @@ You may also see any lint errors in the console.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/ITurres/tesla-booking-front-end/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
