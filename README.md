@@ -263,6 +263,7 @@ Give a ⭐ if you liked this project!
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - We the team would like to thank each other for the hard work and dedication to this project.
+- Original [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) idea by [Murat Korkmaz](https://www.behance.net/muratk).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
