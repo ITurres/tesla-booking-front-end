@@ -15,7 +15,9 @@
   - [📊 Kanban](#kanban-board)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
+- [⚙️ Setting Up Environment Variables](#env-setup)
+- [🖥️ Backend Integration](#backend-integration)
+  - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -113,6 +115,68 @@
       <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
     </li>
   </ul>
+
+---
+
+<!-- ! ENV SETUP -->
+
+# ⚙️ Setting Up Environment Variables <a name="env-setup"></a>
+
+In order to run this project, you'll need to set up your environment variables. We've provided a `.env_sample` file that you can use as a template. Follow these steps to configure your environment variables:
+
+1. **Create a Copy of `.env_sample`**
+
+   - Duplicate the `.env_sample` file and rename it to `.env`.
+
+2. **Replace Placeholder Values**
+
+   - Open the `.env` file in a text editor.
+   - Replace the placeholder values (e.g., `YOUR_API_BASE_URL`, `YOUR_API_SIGNUP_ENDPOINT`, etc.) with your actual API details.
+
+3. **Save the Changes**
+
+   - Save the changes to the `.env` file.
+
+4. **Usage in the Project**
+   - The project will now automatically pick up the environment variables from the `.env` file during runtime.
+
+### Important Notes:
+
+- **Security:** Keep your `.env` file secure and never expose it publicly, as it may contain sensitive information.
+- **Git Ignored:** Ensure that the `.env` file is listed in your `.gitignore` to prevent accidental commits of sensitive information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- ! BACKEND INTEGRATION -->
+
+# 🖥️ Backend Integration <a name="backend-integration"></a>
+
+This project relies on a backend service to fetch and handle data. To ensure the project functions correctly, it's crucial to have a working backend with the corresponding API keys. If you don't have a backend set up yet, follow these steps:
+
+1. **Set Up Backend:**
+
+   - Create or use an existing backend service, e.g [our Tesla Booking backend - repo](https://github.com/mahammad-mostafa/tesla-booking-back-end) | [Tesla Booking API-documentation](https://tesla-booking-api-x2xe.onrender.com/api-docs/index.html) that supports the functionalities specified in the API endpoints provided in the `.env` file.
+
+2. **Replace API Endpoints:**
+
+   - Ensure that the API endpoints in the `.env` file match the corresponding routes and functionality in your backend.
+
+3. **Environment Variables:**
+
+   - Make sure that the environment variables set in the `.env` file are configured in your backend environment.
+
+4. **Run Backend:**
+   - Start your backend service to handle API requests from the frontend.
+
+### Note:
+
+- **Backend Requirement:** This project requires a backend to fully operate. Ensure that your backend is configured correctly with the provided API keys for seamless integration.
+
+Feel free to reach out if you encounter any issues or need further assistance with the setup.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
