@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { FaXmark } from 'react-icons/fa6';
@@ -12,15 +12,14 @@ import '../styles/components/RegistrationPanel.scss';
 
 const RegistrationPanel = () => {
   const dispatch = useDispatch();
+  const registrationPanelRef = useRef(null);
 
   const { registrationType } = useSelector(
     (state) => state.users.registrationPanel,
   );
 
   const closeRegistrationPanel = () => {
-    const panel = document.querySelector('.registration-panel');
-
-    panel.classList.toggle('hide');
+    registrationPanelRef.current.classList.toggle('hide');
 
     setTimeout(() => {
       dispatch(deactivateRegistrationPanel());
@@ -28,7 +27,7 @@ const RegistrationPanel = () => {
   };
 
   return (
-    <div className="registration-panel">
+    <div className="registration-panel" ref={registrationPanelRef}>
       <button
         type="button"
         className="x-button"

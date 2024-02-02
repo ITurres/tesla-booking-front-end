@@ -21,7 +21,10 @@ const ReservationList = () => {
     } else {
       setTimeout(() => {
         loader.current.classList.remove('reservations_active');
-        setTimeout(() => loader.current.classList.remove('reservations_visible'), 500);
+        setTimeout(
+          () => loader.current.classList.remove('reservations_visible'),
+          500,
+        );
       }, 100);
     }
   };
@@ -45,21 +48,40 @@ const ReservationList = () => {
 
   return (
     <section className="reservations_page">
-      <div className="reservations_loader reservations_visible reservations_active" ref={loader}><FaSpinner /></div>
-      {(error !== null || reservations || reservations.length === 0) ? (
+      <div
+        className="reservations_loader reservations_visible reservations_active"
+        ref={loader}
+      >
+        <FaSpinner />
+      </div>
+      {error !== null
+      || Object.keys(reservations).length === 0
+      || reservations.length === 0 ? (
         <div className="reservations_error">
           <FaExclamation />
           <h2>{error !== null ? error : 'No Reservations available!'}</h2>
-          {error !== null && <button type="button" className="btn" onClick={() => { setRefetch(true); }}>Reload</button>}
+          {error !== null && (
+            <button
+              type="button"
+              className="btn"
+              onClick={() => {
+                setRefetch(true);
+              }}
+            >
+              Reload
+            </button>
+          )}
         </div>
-      ) : (
-        <>
-          <h2>My Reservations</h2>
-          <ul className="reservations_list">
-            {reservations.map((item) => <ReservationItem key={item.id} item={item} />)}
-          </ul>
-        </>
-      )}
+        ) : (
+          <>
+            <h2>My Reservations</h2>
+            <ul className="reservations_list">
+              {reservations.map((item) => (
+                <ReservationItem key={item.id} item={item} />
+              ))}
+            </ul>
+          </>
+        )}
     </section>
   );
 };

@@ -27,6 +27,7 @@ main:has(.add-vehicle-page) {
   min-height: 130vh;
   text-align: center;
   color: $main-color;
+  padding-bottom: 2rem;
 
   h1 {
     text-transform: uppercase;
@@ -51,13 +52,17 @@ main:has(.add-vehicle-page) {
   }
 
   &__content {
+    padding-top: 4rem;
+
     @media screen and (min-width: $screen-min-width) {
+      padding-top: 2.5rem;
       margin-left: 20%;
     }
   }
 
   @media screen and (min-width: $screen-min-width) {
     min-height: 100%;
+    margin-left: 20%;
     background-image: unset;
     background-color: unset;
 
@@ -78,5 +83,6 @@ main:has(.add-vehicle-page) {
 
   @media screen and (min-height: $screen-min-height) {
     min-height: 100vh;
+    padding-bottom: unset;
   }
 }

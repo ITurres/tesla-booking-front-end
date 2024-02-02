@@ -27,6 +27,11 @@ const VehiclesList = () => {
     return (
       <div className="loading-error-wrapper">
         <Spinner animation="grow" variant="danger" />
+        <p>
+          The project database is currently hosted on Render.com and is in a
+          dormant state. Kindly allow a few moments for the database to
+          initialize and become active.
+        </p>
         <h3>Loading...</h3>
       </div>
     );
@@ -36,7 +41,7 @@ const VehiclesList = () => {
     return (
       <div className="loading-error-wrapper">
         <h3>Sorry, something went wrong...</h3>
-        <button type="button" className="" onClick={reFetchVehicles}>
+        <button type="button" className="btn" onClick={reFetchVehicles}>
           Refresh
         </button>
       </div>
@@ -50,7 +55,7 @@ const VehiclesList = () => {
   ) : (
     <div className="loading-error-wrapper">
       <h3>No vehicles found</h3>
-      <button type="button" className="" onClick={reFetchVehicles}>
+      <button type="button" className="btn" onClick={reFetchVehicles}>
         Refresh
       </button>
     </div>

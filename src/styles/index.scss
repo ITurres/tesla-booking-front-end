@@ -11,6 +11,8 @@ $heading-font: var.$heading-font;
 
 $success-color: #4caf50;
 
+$screen-min-width: 992px;
+
 html:has(.registration-panel) {
   overflow: hidden;
 }
@@ -19,6 +21,12 @@ body {
   background-color: $main-color;
   color: $fourth-main-color;
   font-family: $main-font;
+
+  @media screen and (min-width: $screen-min-width) {
+    &:has(.reservation-page, .add-vehicle-page) {
+      overflow: hidden;
+    }
+  }
 }
 
 h1,

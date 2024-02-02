@@ -22,6 +22,7 @@ const ReservationForm = () => {
   const dispatch = useDispatch();
 
   const [buttonText, setButtonText] = useState('');
+  const [buttonSuccess, setButtonSuccess] = useState(false);
 
   const dateRef = useRef(null);
   const locationRef = useRef(null);
@@ -80,18 +81,23 @@ const ReservationForm = () => {
       dispatch(postReservation(reservationData))
         // ? the response 'reservation' already has the data attached to it.
         .then((reservation) => {
-          dispatch(addReservation(reservation));
+          // ? reservation.payload = e.g { id: 1, carId: 1, date: '2021-12-12'....}.
+          dispatch(addReservation(reservation.payload));
 
           dateRef.current.value = '';
           locationRef.current.value = '';
           vehicleRef.current.value = '';
 
+          setButtonSuccess(true);
           setButtonText('Yay!, your reservation has been submitted.');
         })
         .catch(() => {
           setButtonText('Oops!, something went wrong.');
         });
     }
+
+    // ? reset the button if any of the validation fails.
+    setButtonSuccess(false);
   };
 
   return (
@@ -109,7 +115,13 @@ const ReservationForm = () => {
           ))}
         </select>
 
-        <select name="vehicle" id="vehicle" ref={vehicleRef} defaultValue={vehicle} required>
+        <select
+          name="vehicle"
+          id="vehicle"
+          ref={vehicleRef}
+          defaultValue={vehicle}
+          required
+        >
           <option disabled>Select a vehicle</option>
 
           {vehicles.map((vehicle) => (
@@ -121,7 +133,9 @@ const ReservationForm = () => {
 
         <button
           type="button"
-          className={`btn ${buttonText ? 'form__error' : ''}`}
+          className={`btn ${buttonText ? 'form__error' : ''} ${
+            buttonSuccess ? 'form__success' : ''
+          }`}
           onClick={handleSubmit}
         >
           {buttonText ? `${buttonText}` : 'Book Now'}

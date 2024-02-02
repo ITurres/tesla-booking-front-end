@@ -52,7 +52,7 @@ const NavigationLinks = () => {
     {
       id: getRandomId(),
       name: 'Reserve',
-      url: 'reservations/new',
+      url: '/reservations/new',
       icon: <FaCreditCard />,
       level: 2,
       type: null,
@@ -60,7 +60,7 @@ const NavigationLinks = () => {
     {
       id: getRandomId(),
       name: 'My Reservations',
-      url: 'reservations',
+      url: '/reservations',
       icon: <FaRegCalendar />,
       level: 2,
       type: null,
@@ -68,7 +68,7 @@ const NavigationLinks = () => {
     {
       id: getRandomId(),
       name: 'Insert Vehicle',
-      url: 'vehicles/new',
+      url: '/vehicles/new',
       icon: <FaPlus />,
       level: 2,
       type: null,
@@ -76,7 +76,7 @@ const NavigationLinks = () => {
     {
       id: getRandomId(),
       name: 'Remove Vehicle',
-      url: 'vehicles/delete',
+      url: '/vehicles/delete',
       icon: <FaTrash />,
       level: 2,
       type: null,

@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   FaBars,
   FaFacebook, FaInstagram, FaXTwitter, FaXmark, FaYoutube,
@@ -10,13 +11,14 @@ import '../styles/components/SidePanel.scss';
 
 const SidePanel = () => {
   const panel = useRef(null);
+  const location = useLocation();
   const socials = [
     { id: getRandomId(), icon: <FaFacebook /> },
     { id: getRandomId(), icon: <FaInstagram /> },
     { id: getRandomId(), icon: <FaYoutube /> },
     { id: getRandomId(), icon: <FaXTwitter /> },
   ];
-  const menuToggle = (opened) => {
+  const toggleMenu = (opened) => {
     if (opened) {
       panel.current.classList.add('panel_visible');
       setTimeout(() => panel.current.classList.add('panel_active'));
@@ -25,16 +27,21 @@ const SidePanel = () => {
       setTimeout(() => panel.current.classList.remove('panel_visible'), 500);
     }
   };
+  useEffect(() => {
+    if (panel.current.classList.contains('panel_visible')) {
+      toggleMenu(false);
+    }
+  }, [location]);
   return (
     <menu>
-      <button type="button" aria-label="menu" className="panel_button" onClick={() => menuToggle(true)}>
+      <button type="button" aria-label="menu" className="panel_button" onClick={() => toggleMenu(true)}>
         <FaBars />
       </button>
       <div className="panel_menu" ref={panel}>
         <div>
           <span>
             <img src={Logo} alt="Tesla Booking" />
-            <button type="button" aria-label="Close" onClick={() => menuToggle(false)}>
+            <button type="button" aria-label="Close" onClick={() => toggleMenu(false)}>
               <FaXmark />
             </button>
           </span>

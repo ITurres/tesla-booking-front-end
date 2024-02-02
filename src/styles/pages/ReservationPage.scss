@@ -14,7 +14,7 @@ $overlay-bg-transparency: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
 
   &__hero-overlay {
     position: absolute;
@@ -68,7 +68,8 @@ $overlay-bg-transparency: 0;
   }
 
   @media screen and (min-width: 992px) {
-    margin-left: 20%;
+    margin-left: 40%;
+    min-height: 100vh;
 
     &__demo-video {
       width: max-content;

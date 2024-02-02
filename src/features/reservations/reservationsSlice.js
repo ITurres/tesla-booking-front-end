@@ -12,7 +12,11 @@ const reservationSlice = createSlice({
   },
   reducers: {
     addReservation: (state, { payload }) => {
-      state.reservations = payload;
+      // ? when user is in 'ReservationForm' page, and clicks 'My Reservations'
+      // ? the API will return a single object, not an array.
+      // ? thats why we need to create a new array with the new reservation
+      // ? to be iterable in 'ReservationsList' component.
+      state.reservations = [payload];
     },
     selectVehicle: (state, { payload }) => {
       state.vehicle = payload;
@@ -25,7 +29,9 @@ const reservationSlice = createSlice({
       })
       .addCase(postReservation.fulfilled, (state, action) => {
         state.loading = false;
-        state.reservations = action.payload;
+        // ? When is fulfilled, we are getting a single object, not an array.
+        // ? thats why we need to create a new array with the new reservation.
+        state.reservations = [action.payload];
       })
       .addCase(postReservation.rejected, (state, action) => {
         state.loading = false;

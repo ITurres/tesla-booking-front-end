@@ -1,7 +1,34 @@
+@use '../../variables' as var;
+
+$secondary-main-color: var.$secondary-main-color;
+$light-gray: var.$light-gray;
+
+$screen-min-width: 992px;
+
 .loading-error-wrapper {
   align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    max-width: 400px;
+    background-color: rgba($light-gray, 0.2);
+    color: $secondary-main-color;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .btn {
+    border: 3px solid $secondary-main-color;
+  }
+
+  @media screen and (min-width: $screen-min-width) {
+    margin-left: 20%;
+  }
 }

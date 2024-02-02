@@ -12,11 +12,19 @@ const apiRequest = async (path, method = 'GET', body = {}) => {
   // ? If the user has signup/login, we have the token, so we can
   // ? have access to user's related data.
   if (document.cookie.includes('tesla-booking-user-token')) {
-    fetchOptions.headers.Authorization = `${document.cookie.split('=')[1]}`;
+    const tokenCookie = document.cookie
+      .split('; ')
+      .find((cookie) => cookie.startsWith('tesla-booking-user-token='));
+
+    if (tokenCookie) {
+      const tokenValue = tokenCookie.split('=')[1];
+      fetchOptions.headers.Authorization = tokenValue;
+    }
   }
 
   try {
     const response = await fetch(`${baseUrl}${path}`, fetchOptions);
+
     if (response.status === 422) {
       const result = await response.json();
 
