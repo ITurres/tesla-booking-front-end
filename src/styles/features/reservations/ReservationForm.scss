@@ -1,0 +1,18 @@
+@use '../../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$dark-gray: var.$dark-gray;
+
+.reservation-form {
+  z-index: 2; // ? 'reservation-page__hero-overlay' has z-index: 1;
+  padding: 0.5rem 1rem;
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}

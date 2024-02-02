@@ -1,0 +1,21 @@
+{
+  "status": {
+    "code": 200,
+    "message": "Success: car data retrieved successfully"
+  },
+  "data": {
+    "id": 1,
+    "userId": 1,
+    "ownedByUser": false,
+    "carModelName": "Model S",
+    "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png",
+    "description": "Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation.",
+    "rentalPrice": 150,
+    "performanceDetails": [
+      "359 mi Range (EPA est.)",
+      "1.99 s 0-60 mph*",
+      "200 mph Top Speed†",
+      "1,020 hp Peak Power"
+    ]
+  }
+}

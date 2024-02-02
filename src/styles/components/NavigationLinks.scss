@@ -1,0 +1,68 @@
+@use '../variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$fourth-main-color: var.$fourth-main-color;
+$third-main-color: var.$third-main-color;
+$heading-font: var.$heading-font;
+$light-gray: var.$light-gray;
+
+$screen-min-width: 992px;
+$screen-max-height: 576px;
+
+nav {
+  margin-top: calc(10vh - 10%);
+
+  @media only screen and (min-width: $screen-min-width) {
+    margin-top: 80px;
+  }
+
+  @media only screen and (max-height: $screen-max-height) {
+    overflow: hidden;
+    overflow-y: scroll;
+    border-top: 1px solid $third-main-color;
+    border-bottom: 1px solid $third-main-color;
+    margin: 0;
+  }
+}
+
+.panel_list {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  flex-direction: column;
+  margin: 0;
+
+  a {
+    display: flex;
+    gap: 10px;
+    padding: 1rem;
+    color: darken($light-gray, 10%);
+    align-items: center;
+    text-decoration: none;
+    font: bold 1.25rem $heading-font;
+    transition: all 0.1s ease;
+
+    svg {
+      fill: $fourth-main-color;
+    }
+
+    &:hover {
+      color: $main-color;
+      background-color: $secondary-main-color;
+
+      svg {
+        fill: $main-color;
+      }
+    }
+
+    @media only screen and (min-width: $screen-min-width) {
+      font-size: 0.8rem;
+      padding: 1rem 2rem;
+
+      svg {
+        font-size: 1rem;
+      }
+    }
+  }
+}

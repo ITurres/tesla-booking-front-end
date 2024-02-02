@@ -1,0 +1,184 @@
+@use '../../variables' as var;
+
+$main-color: var.$main-color;
+$light-gray: var.$light-gray;
+$dark-gray: var.$dark-gray;
+$secondary-main-color: var.$secondary-main-color;
+$third-main-color: var.$third-main-color;
+$heading-font: var.$heading-font;
+
+$screen-min-width: 992px;
+
+.vehicle_page {
+  height: 100%;
+
+  @media only screen and (min-width: $screen-min-width) {
+    width: 80%;
+    position: relative;
+    margin-inline-start: auto;
+  }
+}
+
+.vehicle_loader {
+  opacity: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  background-color: $main-color;
+  transition: all 0.5s ease;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: $secondary-main-color;
+    animation: spin 1s linear infinite;
+  }
+}
+
+.vehicle_error {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $main-color;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    fill: $main-color;
+    background-color: $secondary-main-color;
+    border-radius: 50%;
+  }
+
+  h2 {
+    color: $dark-gray;
+    font-size: 1rem;
+  }
+
+  span {
+    color: $dark-gray;
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
+.vehicle_details {
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  @media only screen and (min-width: $screen-min-width) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.vehicle_image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  a {
+    padding: 10px 20px;
+    color: $main-color;
+    text-decoration: none;
+    font: bold 1rem $heading-font;
+    background-color: $secondary-main-color;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+  }
+}
+
+.vehicle_text {
+  display: flex;
+  gap: 10px;
+  padding: 1rem;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0;
+
+  @media only screen and (min-width: $screen-min-width) {
+    width: 35%;
+  }
+
+  h2 {
+    font: bold 2rem $heading-font;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+    text-align: start;
+    flex-direction: column;
+    margin: 0;
+
+    li {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: $third-main-color;
+    }
+
+    :nth-child(odd) {
+      background-color: $light-gray;
+    }
+  }
+
+  p {
+    font-style: italic;
+    text-align: justify;
+    margin: 0;
+  }
+
+  span {
+    font: bold 2rem $heading-font;
+  }
+
+  a,
+  button {
+    padding: 10px 20px;
+    color: $main-color;
+    text-decoration: none;
+    font: bold 1.5rem $heading-font;
+    background-color: $secondary-main-color;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: $screen-min-width) {
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+.vehicle_visible {
+  display: flex;
+}
+
+.vehicle_active {
+  opacity: 1;
+}

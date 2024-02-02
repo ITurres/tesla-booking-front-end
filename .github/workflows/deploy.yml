@@ -1,0 +1,21 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  deploy:
+    name: teslaDeploy
+    runs-on: ubuntu-latest
+    environment: development
+    env:
+      REACT_APP_TESLA_API_BASE_URL: ${{ secrets.REACT_APP_TESLA_API_BASE_URL }}
+      REACT_APP_TESLA_API_USER_SIGNUP: ${{ secrets.REACT_APP_TESLA_API_USER_SIGNUP }}
+      REACT_APP_TESLA_API_USER_LOGOUT: ${{ secrets.REACT_APP_TESLA_API_USER_LOGOUT }}
+      REACT_APP_TESLA_API_USER_LOGIN: ${{ secrets.REACT_APP_TESLA_API_USER_LOGIN }}
+      REACT_APP_TESLA_API_VEHICLES: ${{ secrets.REACT_APP_TESLA_API_VEHICLES }}
+      REACT_APP_TESLA_API_VEHICLES_CREATE: ${{ secrets.REACT_APP_TESLA_API_VEHICLES_CREATE }}
+      REACT_APP_TESLA_API_RESERVATIONS: ${{ secrets.REACT_APP_TESLA_API_RESERVATIONS }}
+      REACT_APP_TESLA_API_RESERVATIONS_CREATE: ${{ secrets.REACT_APP_TESLA_API_RESERVATIONS_CREATE }}

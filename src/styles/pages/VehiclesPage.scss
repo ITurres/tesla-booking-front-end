@@ -1,0 +1,51 @@
+@use '../variables' as var;
+
+$dark-gray: var.$dark-gray;
+$light-gray: var.$light-gray;
+
+$screen-min-width: 992px;
+$screen-max-height: 576px;
+
+.vehicles__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+
+  &__overlay {
+    text-align: center;
+
+    h1 {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+
+    p {
+      font-weight: 600;
+      color: $dark-gray;
+      width: fit-content;
+      margin: 0 auto;
+      border-bottom: 5px dotted $light-gray;
+      padding-bottom: 2rem;
+    }
+
+    @media only screen and (min-width: $screen-min-width) {
+      width: 80%;
+      margin-inline-start: auto;
+    }
+  }
+
+  .vehicles__list--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  // ? breakpoint for mobile devices when are in landscape mode.
+  @media (orientation: landscape) and (max-height: $screen-max-height) {
+    height: unset;
+  }
+}

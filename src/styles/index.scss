@@ -1,0 +1,119 @@
+@forward './base/normalize.css';
+
+@use 'variables' as var;
+
+$main-color: var.$main-color;
+$secondary-main-color: var.$secondary-main-color;
+$dark-gray: var.$dark-gray;
+$fourth-main-color: var.$fourth-main-color;
+$main-font: var.$main-font;
+$heading-font: var.$heading-font;
+
+$success-color: #4caf50;
+
+$screen-min-width: 992px;
+
+html:has(.registration-panel) {
+  overflow: hidden;
+}
+
+body {
+  background-color: $main-color;
+  color: $fourth-main-color;
+  font-family: $main-font;
+
+  @media screen and (min-width: $screen-min-width) {
+    &:has(.reservation-page, .add-vehicle-page) {
+      overflow: hidden;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+main {
+  padding-top: 70px;
+
+  @media only screen and (min-width: 992px) {
+    height: 100vh;
+    max-width: 1400px;
+    position: relative;
+    padding: 0;
+    box-sizing: border-box;
+    margin: auto;
+  }
+}
+
+.btn,
+input,
+textarea,
+select {
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  border: 2px solid $main-color;
+  background-color: rgba($main-color, 90%);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  color: $dark-gray;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 40px;
+}
+
+input,
+textarea,
+select {
+  &:focus {
+    outline: none;
+    border: 2px solid $secondary-main-color;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  color: $secondary-main-color;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $secondary-main-color;
+    border: 2px solid $secondary-main-color;
+    color: $main-color;
+  }
+}
+
+.btn.form__error {
+  box-shadow: 0 20px 80px 0.1rem $secondary-main-color;
+  cursor: not-allowed;
+}
+
+.btn.form__success {
+  box-shadow: 0 20px 80px 0.1rem $success-color;
+  color: $success-color;
+  border: 2px solid $success-color;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
