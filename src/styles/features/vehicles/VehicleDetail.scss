@@ -157,13 +157,15 @@ $screen-min-width: 992px;
     font: bold 2rem $heading-font;
   }
 
-  a {
+  button {
     padding: 10px 20px;
     color: $main-color;
     text-decoration: none;
     font: bold 1.5rem $heading-font;
     background-color: $secondary-main-color;
+    border: none;
     border-radius: 10px;
+    cursor: pointer;
   }
 
   @media only screen and (min-width: $screen-min-width) {

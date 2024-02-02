@@ -105,9 +105,9 @@ const VehicleDetail = () => {
                   Reserve
                 </Link>
               ) : (
-                <a href="#login" onClick={() => handleLoginPanel()}>
+                <button type="button" onClick={() => handleLoginPanel()}>
                   Login
-                </a>
+                </button>
               )}
             </div>
           </div>
