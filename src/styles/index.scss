@@ -108,6 +108,60 @@ select {
   }
 }
 
+.loader-indicator {
+  opacity: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  background-color: $main-color;
+  transition: all 0.5s ease;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: $secondary-main-color;
+    animation: spin 1s linear infinite;
+  }
+}
+
+.error-indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $main-color;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    fill: $main-color;
+    background-color: $secondary-main-color;
+    border-radius: 50%;
+  }
+
+  h2 {
+    color: $dark-gray;
+    font-size: 1rem;
+  }
+
+  span {
+    color: $dark-gray;
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotateZ(0);
