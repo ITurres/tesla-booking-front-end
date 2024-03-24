@@ -1,3 +1,5 @@
+import getCookie from './getCookie';
+
 const apiRequest = async (path, method = 'GET', body = {}) => {
   const baseUrl = process.env.REACT_APP_TESLA_API_BASE_URL;
   const fetchOptions = {
@@ -11,15 +13,11 @@ const apiRequest = async (path, method = 'GET', body = {}) => {
 
   // ? If the user has signup/login, we have the token, so we can
   // ? have access to user's related data.
-  if (document.cookie.includes('tesla-booking-user-token')) {
-    const tokenCookie = document.cookie
-      .split('; ')
-      .find((cookie) => cookie.startsWith('tesla-booking-user-token='));
+  const cookieData = getCookie('tesla-booking-user-token');
+  if (cookieData) {
+    const tokenValue = cookieData.split('=')[1];
 
-    if (tokenCookie) {
-      const tokenValue = tokenCookie.split('=')[1];
-      fetchOptions.headers.Authorization = tokenValue;
-    }
+    fetchOptions.headers.Authorization = tokenValue;
   }
 
   try {
