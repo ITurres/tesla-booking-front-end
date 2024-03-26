@@ -2,7 +2,11 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   FaBars,
-  FaFacebook, FaInstagram, FaXTwitter, FaXmark, FaYoutube,
+  FaFacebook,
+  FaInstagram,
+  FaXTwitter,
+  FaXmark,
+  FaYoutube,
 } from 'react-icons/fa6';
 import NavigationLinks from './NavigationLinks';
 import getRandomId from '../helpers/getRandomId';
@@ -34,15 +38,25 @@ const SidePanel = () => {
   }, [location]);
   return (
     <menu>
-      <button type="button" aria-label="menu" className="panel_button" onClick={() => toggleMenu(true)}>
-        <FaBars />
+      <button
+        type="button"
+        aria-label="menu"
+        className="panel_button"
+        onClick={() => toggleMenu(true)}
+      >
+        <FaBars className="bars_icon_svg" />
       </button>
       <div className="panel_menu" ref={panel}>
         <div>
           <span>
             <img src={Logo} alt="Tesla Booking" />
-            <button type="button" aria-label="Close" onClick={() => toggleMenu(false)}>
-              <FaXmark />
+            <button
+              type="button"
+              aria-label="Close"
+              className="mobile_close_button"
+              onClick={() => toggleMenu(false)}
+            >
+              <FaXmark className="x_icon_svg" />
             </button>
           </span>
           <NavigationLinks />
