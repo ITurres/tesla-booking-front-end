@@ -21,7 +21,9 @@ const VehiclesList = () => {
     reFetchVehicles();
   }, [reFetchVehicles]);
 
-  const { loading, error, vehicles } = useSelector((state) => state.vehicles);
+  const { loading, error, vehiclesList } = useSelector(
+    (state) => state.vehicles,
+  );
 
   if (loading) {
     return (
@@ -48,9 +50,9 @@ const VehiclesList = () => {
     );
   }
 
-  return vehicles.length > 0 ? (
+  return vehiclesList.length > 0 ? (
     <div className="vehicles__list--wrapper">
-      <SplideCarousel vehicles={vehicles} />
+      <SplideCarousel vehiclesList={vehiclesList} />
     </div>
   ) : (
     <div className="loading-error-wrapper">
