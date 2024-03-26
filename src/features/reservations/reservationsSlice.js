@@ -6,7 +6,7 @@ const reservationSlice = createSlice({
   name: 'reservations',
   initialState: {
     vehicle: null,
-    reservations: [],
+    reservationsList: [],
     loading: false,
     error: null,
   },
@@ -16,7 +16,7 @@ const reservationSlice = createSlice({
       // ? the API will return a single object, not an array.
       // ? thats why we need to create a new array with the new reservation
       // ? to be iterable in 'ReservationsList' component.
-      state.reservations = [payload];
+      state.reservationsList = [payload];
     },
     selectVehicle: (state, { payload }) => {
       state.vehicle = payload;
@@ -31,7 +31,7 @@ const reservationSlice = createSlice({
         state.loading = false;
         // ? When is fulfilled, we are getting a single object, not an array.
         // ? thats why we need to create a new array with the new reservation.
-        state.reservations = [action.payload];
+        state.reservationsList = [action.payload];
       })
       .addCase(postReservation.rejected, (state, action) => {
         state.loading = false;
@@ -44,7 +44,7 @@ const reservationSlice = createSlice({
       .addCase(fetchReservations.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        state.reservations = action.payload;
+        state.reservationsList = action.payload;
       })
       .addCase(fetchReservations.rejected, (state, action) => {
         state.loading = false;
