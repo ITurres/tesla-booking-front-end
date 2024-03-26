@@ -12,7 +12,7 @@ import { MdOutlinePlayArrow } from 'react-icons/md';
 
 import VehicleItem from './VehicleItem';
 
-const SplideCarousel = ({ vehicles }) => (
+const SplideCarousel = ({ vehiclesList }) => (
   <Splide
     className="splide__container"
     tag="section"
@@ -41,7 +41,7 @@ const SplideCarousel = ({ vehicles }) => (
     }}
   >
     <SplideTrack>
-      {vehicles.map((vehicleData) => (
+      {vehiclesList.map((vehicleData) => (
         <SplideSlide key={vehicleData.id}>
           <VehicleItem vehicleData={vehicleData} />
         </SplideSlide>
@@ -64,7 +64,7 @@ const SplideCarousel = ({ vehicles }) => (
 );
 
 SplideCarousel.propTypes = {
-  vehicles: PropTypes.arrayOf(Object).isRequired,
+  vehiclesList: PropTypes.arrayOf(Object).isRequired,
 };
 
 SplideCarousel.defaultProps = {};
