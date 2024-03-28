@@ -8,9 +8,27 @@ $dark-gray: var.$dark-gray;
 $light-gray: var.$light-gray;
 $fourth-main-color: var.$fourth-main-color;
 
+$screen-min-width: 992px;
+
+.splide {
+  @media screen and (min-width: $screen-min-width) {
+    &__container {
+      height: 550px;
+    }
+  }
+}
+
 .splide__slide {
+  min-height: 430px;
+
   &__container {
+    position: relative;
     padding: 0 20px;
+    min-height: -webkit-fill-available;
+
+    @media screen and (min-width: $screen-min-width) {
+      min-height: 450px;
+    }
   }
 
   &__img {
@@ -60,7 +78,11 @@ $fourth-main-color: var.$fourth-main-color;
       margin: 0 auto;
       width: fit-content;
       gap: 1rem;
-      padding: 2rem 0 4rem 0;
+      padding: 1.5rem 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
 
     li {
@@ -81,6 +103,10 @@ $fourth-main-color: var.$fourth-main-color;
         }
       }
     }
+  }
+
+  @media screen and (max-width: $screen-min-width) {
+    min-height: 550px;
   }
 }
 
@@ -128,10 +154,19 @@ $fourth-main-color: var.$fourth-main-color;
   }
 }
 
-.splide__pagination__page {
-  background-color: $dark-gray;
+.splide__pagination {
+  // * Overrides the default Splide bottom attribute.
+  // * This value makes it move a bit down.
+  bottom: -2rem !important;
 
-  &.is-active {
-    background-color: $secondary-main-color;
+  padding-bottom: 0.5rem;
+
+  // * __page = the dots itself.
+  &__page {
+    background-color: $dark-gray;
+
+    &.is-active {
+      background-color: $secondary-main-color;
+    }
   }
 }
