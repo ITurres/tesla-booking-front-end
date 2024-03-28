@@ -31,7 +31,7 @@ const ReservationItem = ({
 ReservationItem.propTypes = {
   item: PropTypes.shape({
     carModelName: PropTypes.string.isRequired,
-    rentalPrice: PropTypes.number.isRequired,
+    rentalPrice: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
