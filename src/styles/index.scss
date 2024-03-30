@@ -91,6 +91,10 @@ select {
     border: 2px solid $secondary-main-color;
     color: $main-color;
   }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($secondary-main-color, 0.5);
+  }
 }
 
 .btn.form__error {
