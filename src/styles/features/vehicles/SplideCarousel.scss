@@ -24,6 +24,7 @@ $screen-min-width: 992px;
   &__container {
     position: relative;
     padding: 0 20px;
+    // stylelint-disable-next-line csstree/validator
     min-height: -webkit-fill-available;
 
     @media screen and (min-width: $screen-min-width) {
@@ -158,7 +159,6 @@ $screen-min-width: 992px;
   // * Overrides the default Splide bottom attribute.
   // * This value makes it move a bit down.
   bottom: -2rem !important;
-
   padding-bottom: 0.5rem;
 
   // * __page = the dots itself.
