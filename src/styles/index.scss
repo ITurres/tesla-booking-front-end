@@ -131,6 +131,13 @@ select {
     fill: $secondary-main-color;
     animation: spin 1s linear infinite;
   }
+
+  &.visible {
+    display: flex;
+    opacity: 1;
+    position: unset;
+    margin-top: 2rem;
+  }
 }
 
 .error-indicator {
