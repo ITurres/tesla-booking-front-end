@@ -8,7 +8,7 @@ import AddVehiclePage from '../pages/AddVehiclePage';
 import VehicleDetail from '../features/vehicles/VehicleDetail';
 import ReservationList from '../features/reservations/ReservationsList';
 import PageNotFound from '../components/PageNotFound';
-import DeleteVehicleList from '../features/vehicles/DeleteVehicleList';
+import ListVehiclesToDelete from '../features/vehicles/ListVehiclesToDelete';
 
 import deleteCookie from '../helpers/deleteCookie';
 import getCookie from '../helpers/getCookie';
@@ -58,7 +58,10 @@ function App() {
               <Route path="/reservations" element={<ReservationList />} />
               <Route path="/reservations/new" element={<ReservationPage />} />
               <Route path="/vehicles/new" element={<AddVehiclePage />} />
-              <Route path="/vehicles/delete" element={<DeleteVehicleList />} />
+              <Route
+                path="/vehicles/delete"
+                element={<ListVehiclesToDelete />}
+              />
             </>
           )}
         </Route>
