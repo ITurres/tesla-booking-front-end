@@ -312,7 +312,7 @@ You may also see any lint errors in the console.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Test the app with Jest and React Testing Library.**
-- [ ] **Address all the inner issues left at the final-touches issue.**
+- [x] **Address all the inner issues left at the final-touches issue.**
 - [ ] **Dark mode.**
 - [ ] **Option to Delete reservations**.
 
