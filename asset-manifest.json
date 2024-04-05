@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/tesla-booking-front-end/static/css/main.69bb06ec.css",
-    "main.js": "/tesla-booking-front-end/static/js/main.ab49dbad.js",
+    "main.css": "/tesla-booking-front-end/static/css/main.2af13cb7.css",
+    "main.js": "/tesla-booking-front-end/static/js/main.dd630818.js",
+    "static/js/85.516f729b.chunk.js": "/tesla-booking-front-end/static/js/85.516f729b.chunk.js",
     "static/media/tesla-red-word-logo.png": "/tesla-booking-front-end/static/media/tesla-red-word-logo.783174ef5075ee3611e6.png",
     "index.html": "/tesla-booking-front-end/index.html",
-    "main.69bb06ec.css.map": "/tesla-booking-front-end/static/css/main.69bb06ec.css.map",
-    "main.ab49dbad.js.map": "/tesla-booking-front-end/static/js/main.ab49dbad.js.map"
+    "main.2af13cb7.css.map": "/tesla-booking-front-end/static/css/main.2af13cb7.css.map",
+    "main.dd630818.js.map": "/tesla-booking-front-end/static/js/main.dd630818.js.map"
   },
   "entrypoints": [
-    "static/css/main.69bb06ec.css",
-    "static/js/main.ab49dbad.js"
+    "static/css/main.2af13cb7.css",
+    "static/js/main.dd630818.js"
   ]
 }
