@@ -2,7 +2,7 @@
 
 <div align="center">
     <img src="public/tesla-red-logo.png" alt="" width="170"  height="auto" />
-    <h2><b>Tesla | Book a Ride App</b></h2>
+    <h2><b>Tesla | Booking App</b></h2>
 </div>
 
 ---
@@ -17,7 +17,7 @@
     - [Tech Stack](#tech-stack)
 - [⚙️ Setting Up Environment Variables](#env-setup)
 - [🖥️ Backend Integration](#backend-integration)
-  - [Key Features](#key-features)
+  - [🔑 Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -37,7 +37,7 @@
 
 # 📖 Tesla | Book a Ride App <a name="about-project"></a>
 
-**Tesla | Book a Ride App** Team (4): is a project developed by Front-end [Arturo Emanuel Guerra Iturres](https://www.linkedin.com/in/arturoemanuelguerraiturres/), [Mahammad Mostafa](https://www.linkedin.com/in/mahammad-mostafa/), and Back-end [Demes Ameneshoa](https://www.linkedin.com/in/demesameneshoa/) and [Fatema Nazari](https://www.linkedin.com/in/fatemanazari/).
+**Tesla | Booking App** Team (4): is a project developed by Front-end [Arturo Emanuel Guerra Iturres](https://www.linkedin.com/in/arturoemanuelguerraiturres/), [Mahammad Mostafa](https://www.linkedin.com/in/mahammad-mostafa/), and Back-end [Demes Ameneshoa](https://www.linkedin.com/in/demesameneshoa/) and [Fatema Nazari](https://www.linkedin.com/in/fatemanazari/).
 
 > Book your ideal Tesla model effortlessly with our new
 > Tesla vehicle booking app! Enjoy daily rates on our five available models,
@@ -108,7 +108,7 @@
     </li>
     <li>
       <img src="https://skillicons.dev/icons?i=sass"/>
-      <a href="https://sass-lang.com/">SASS</a>
+      <a href="https://sass-lang.com/">SCSS</a>
     </li>
     <li>
       <img src="https://skillicons.dev/icons?i=html"/>
@@ -182,7 +182,7 @@ Feel free to reach out if you encounter any issues or need further assistance wi
 
 <!-- ! Features -->
 
-### Key Features <a name="key-features"></a>
+### 🔑 Key Features <a name="key-features"></a>
 
 - Register with name, email, and password.
 - Log in with email and password.
@@ -346,7 +346,8 @@ Give a ⭐ if you liked this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- We the team would like to thank each other for the hard work and dedication to this project.
+- We the team would like to thank each other for the hard work and dedication to this project. We would also like to thank the Code Reviewers and Project Managers for their support and guidance throughout the project.
+
 - Original [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) idea by [Murat Korkmaz](https://www.behance.net/muratk).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
