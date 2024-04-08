@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="public/tesla-red-logo.png" alt="" width="170"  height="auto" />
+    <img src="public/tesla-red-logo.png" alt="" width="150"  height="auto" />
     <h2><b>Tesla | Booking App</b></h2>
 </div>
 
@@ -35,15 +35,15 @@
 
 <!-- ! PROJECT DESCRIPTION -->
 
-# 📖 Tesla | Book a Ride App <a name="about-project"></a>
+# 📖 Tesla | Booking App <a name="about-project"></a>
 
-**Tesla | Booking App** Team (4): is a project developed by Front-end [Arturo Emanuel Guerra Iturres](https://www.linkedin.com/in/arturoemanuelguerraiturres/), [Mahammad Mostafa](https://www.linkedin.com/in/mahammad-mostafa/), and Back-end [Demes Ameneshoa](https://www.linkedin.com/in/demesameneshoa/) and [Fatema Nazari](https://www.linkedin.com/in/fatemanazari/).
+**Tesla | Booking App** is a project developed by Front-end [Arturo Emanuel Guerra Iturres](https://www.linkedin.com/in/arturoemanuelguerraiturres/), [Mahammad Mostafa](https://www.linkedin.com/in/mahammad-mostafa/), and Back-end [Demes Ameneshoa](https://www.linkedin.com/in/demesameneshoa/) and [Fatema Nazari](https://www.linkedin.com/in/fatemanazari/).
 
 > Book your ideal Tesla model effortlessly with our new
 > Tesla vehicle booking app! Enjoy daily rates on our five available models,
 > available in cities worldwide. Experience the best service in the industry.
 
-- **Back-end repository:** [Tesla | Book a Ride App - Back-end](https://github.com/mahammad-mostafa/tesla-booking-back-end).
+- **Back-end repository:** [Tesla | Booking App - Back-end](https://github.com/mahammad-mostafa/tesla-booking-back-end).
 
 ---
 
@@ -311,9 +311,9 @@ You may also see any lint errors in the console.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Test the app with Jest and React Testing Library.**
-- [x] **Address all the inner issues left at the final-touches issue.**
-- [ ] **Dark mode.**
+- [ ] **Test the app with Jest and React Testing Library**.
+- [x] **Address all the inner issues left at the final-touches issue**.
+- [ ] **Dark mode**.
 - [ ] **Option to Delete reservations**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
