@@ -49,7 +49,7 @@ function SidePanel() {
         className="panel_button"
         onClick={() => toggleMenu(true)}
       >
-        <FaBars className="bars_icon_svg" size={iconSize}/>
+        <FaBars className="bars_icon_svg" size={iconSize} />
       </button>
       <div className="panel_menu" ref={panel}>
         <div>
