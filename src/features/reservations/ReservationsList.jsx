@@ -12,7 +12,9 @@ const ReservationList = () => {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.reservations.error);
   const loading = useSelector((state) => state.reservations.loading);
-  const reservations = useSelector((state) => state.reservations.reservations);
+  const reservations = useSelector(
+    (state) => state.reservations.reservationsList,
+  );
 
   const toggleLoader = (open) => {
     if (open && !loader.current.classList.contains('reservations_visible')) {

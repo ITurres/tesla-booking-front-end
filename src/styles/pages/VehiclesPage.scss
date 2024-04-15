@@ -44,6 +44,17 @@ $screen-max-height: 576px;
     justify-content: flex-end;
   }
 
+  .vehicles__list--wrapper:has(.loader-indicator) {
+    justify-content: center;
+
+    @media screen and (min-width: $screen-min-width) {
+      // * Centers the spinner in the middle of the screen.
+      .loader-indicator {
+        margin-left: 20%;
+      }
+    }
+  }
+
   // ? breakpoint for mobile devices when are in landscape mode.
   @media (orientation: landscape) and (max-height: $screen-max-height) {
     height: unset;

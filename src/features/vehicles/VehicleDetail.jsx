@@ -59,13 +59,13 @@ const VehicleDetail = () => {
   return (
     <section className="vehicle_page">
       <div
-        className="vehicle_loader vehicle_visible vehicle_active"
+        className="loader-indicator vehicle_visible vehicle_active"
         ref={loader}
       >
         <FaSpinner />
       </div>
       {error !== null ? (
-        <div className="vehicle_error">
+        <div className="error-indicator">
           <FaExclamation />
           <h2>{error}</h2>
           <button

@@ -29,10 +29,20 @@ menu {
   border: none;
   transition: all 0.1s ease;
 
+  .bars_icon_svg {
+    fill: $fourth-main-color;
+    width: 1.5rem;
+    height: auto;
+  }
+
   &:hover {
     cursor: pointer;
     color: $main-color;
     background-color: $secondary-main-color;
+
+    .bars_icon_svg {
+      fill: $main-color;
+    }
   }
 
   @media only screen and (min-width: $screen-min-width) {
@@ -115,31 +125,41 @@ menu {
           width: 70%;
         }
       }
-
-      button {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        font-size: 1.5rem;
-        align-items: center;
-        justify-content: center;
-        color: $fourth-main-color;
-        background-color: transparent;
-        border-radius: 10px;
-        border: none;
-        transition: all 0.1s ease;
-
-        &:hover {
-          cursor: pointer;
-          color: $main-color;
-          background-color: $secondary-main-color;
-        }
-
-        @media only screen and (min-width: $screen-min-width) {
-          display: none;
-        }
-      }
     }
+  }
+}
+
+.mobile_close_button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: $fourth-main-color;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.1s ease;
+
+  .x_icon_svg {
+    fill: $fourth-main-color;
+    width: 1.5rem;
+    height: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $main-color;
+    background-color: $secondary-main-color;
+
+    .x_icon_svg {
+      fill: $main-color;
+    }
+  }
+
+  @media only screen and (min-width: $screen-min-width) {
+    display: none;
   }
 }
 

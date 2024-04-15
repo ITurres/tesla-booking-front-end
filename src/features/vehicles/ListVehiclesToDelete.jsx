@@ -4,10 +4,10 @@ import { FaExclamation, FaSpinner } from 'react-icons/fa6';
 import { deleteVehicleById, fetchVehicles } from './vehiclesThunk';
 import DeleteVehicleItem from './DeleteVehicleItem';
 import setPageTitle from '../../helpers/setPageTitle';
-import '../../styles/features/vehicles/DeleteVehicleList.scss';
+import '../../styles/features/vehicles/ListVehiclesToDelete.scss';
 import { deleteVehicle } from './vehiclesSlice';
 
-const DeleteVehicleList = () => {
+const ListVehiclesToDelete = () => {
   const loader = useRef(null);
   const dialog = useRef(null);
   const [confirm, setConfirm] = useState(false);
@@ -16,8 +16,9 @@ const DeleteVehicleList = () => {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.vehicles.error);
   const loading = useSelector((state) => state.vehicles.loading);
-  const vehicles = useSelector((state) => state.vehicles.vehicles).filter((vehicle) => (
-    vehicle.ownedByUser));
+  const vehicles = useSelector((state) => state.vehicles.vehiclesList).filter(
+    (vehicle) => vehicle.ownedByUser,
+  );
 
   const toggleLoader = (open) => {
     if (open && !loader.current.classList.contains('delete_visible')) {
@@ -26,7 +27,10 @@ const DeleteVehicleList = () => {
     } else {
       setTimeout(() => {
         loader.current.classList.remove('delete_active');
-        setTimeout(() => loader.current.classList.remove('delete_visible'), 500);
+        setTimeout(
+          () => loader.current.classList.remove('delete_visible'),
+          500,
+        );
       }, 100);
     }
   };
@@ -38,7 +42,10 @@ const DeleteVehicleList = () => {
     } else {
       setTimeout(() => {
         dialog.current.classList.remove('delete_active');
-        setTimeout(() => dialog.current.classList.remove('delete_visible'), 500);
+        setTimeout(
+          () => dialog.current.classList.remove('delete_visible'),
+          500,
+        );
       }, 100);
     }
   };
@@ -81,29 +88,57 @@ const DeleteVehicleList = () => {
 
   return (
     <section className="delete_page">
-      <div className="delete_loader delete_visible delete_active" ref={loader}><FaSpinner /></div>
+      <div className="delete_loader delete_visible delete_active" ref={loader}>
+        <FaSpinner />
+      </div>
       <dialog className="delete_dialog" ref={dialog}>
         <div>
           <FaExclamation />
           <h3>Are you sure?</h3>
           <span>
-            <button type="button" className="btn" onClick={() => setConfirm(true)}>Yes</button>
-            <button type="button" className="btn" onClick={() => toggleDialog(false)}>No</button>
+            <button
+              type="button"
+              className="btn"
+              onClick={() => setConfirm(true)}
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              className="btn"
+              onClick={() => toggleDialog(false)}
+            >
+              No
+            </button>
           </span>
         </div>
       </dialog>
-      {(error !== null || vehicles.length === 0) ? (
+      {error !== null || vehicles.length === 0 ? (
         <div className="delete_error">
           <FaExclamation />
           <h2>{error !== null ? error : 'No Vehicles available!'}</h2>
-          {error !== null && <button type="button" className="btn" onClick={() => { setRefetch(true); }}>Reload</button>}
+          {error !== null && (
+            <button
+              type="button"
+              className="btn"
+              onClick={() => {
+                setRefetch(true);
+              }}
+            >
+              Reload
+            </button>
+          )}
         </div>
       ) : (
         <>
           <h2>My Vehicles</h2>
           <ul className="delete_list">
             {vehicles.map((item) => (
-              <DeleteVehicleItem key={item.id} item={item} handler={deleteHandler} />
+              <DeleteVehicleItem
+                key={item.id}
+                item={item}
+                handler={deleteHandler}
+              />
             ))}
           </ul>
         </>
@@ -112,4 +147,4 @@ const DeleteVehicleList = () => {
   );
 };
 
-export default DeleteVehicleList;
+export default ListVehiclesToDelete;
