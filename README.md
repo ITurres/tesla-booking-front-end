@@ -315,6 +315,7 @@ You may also see any lint errors in the console.
 - [x] **Address all the inner issues left at the final-touches issue**.
 - [ ] **Dark mode**.
 - [ ] **Option to Delete reservations**.
+- [ ] **Add "Social Login"**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
