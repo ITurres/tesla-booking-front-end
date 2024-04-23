@@ -316,7 +316,7 @@ You may also see any lint errors in the console.
 - [ ] **Dark mode**.
 - [ ] **Option to Delete reservations**.
 - [ ] **Add "Social Login"**.
-
+- [ ] **Replace Loading Spinners with Loading Structure (Skeleton Loading)**.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
