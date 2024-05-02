@@ -317,6 +317,8 @@ You may also see any lint errors in the console.
 - [ ] **Option to Delete reservations**.
 - [ ] **Add "Social Login"**.
 - [ ] **Replace Loading Spinners with Loading Structure (Skeleton Loading)**.
+- [ ] **TypeScript migration**.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
