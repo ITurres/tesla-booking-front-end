@@ -9,7 +9,7 @@ const getRandomId = () => {
     randomId = crypto.randomUUID();
   } else {
     // * Fallback to Math.random() if crypto.randomUUID() is not supported
-    randomId = Math.random().toString(36);
+    randomId = Math.random().toString(36).slice(2);
   }
 
   return randomId;
